@@ -1,15 +1,12 @@
 "use client";
 
-import Image from "next/image";
-
 import React from "react";
-import Navbar from "./(components)/Navbar";
 import BoxCard from "./(components)/BoxCard";
 
 export default function Home() {
   return (
     <>
-      <Navbar title="Online Application System" option="hidden"></Navbar>
+      {/* <Navbar title="Online Application System" option="hidden"></Navbar> */}
       <main className="">
         <div className="d-flex gap-4 justify-content-center mt-5 flex-wrap">
           <BoxCard
@@ -35,7 +32,7 @@ export default function Home() {
           <fieldset className="col-4">
             <legend> fieldset example</legend>
             <div className="mb-3">
-              <label for="disabledTextInput" className="form-label">
+              <label htmlFor="disabledTextInput" className="form-label">
                  input
               </label>
               <input
@@ -45,7 +42,7 @@ export default function Home() {
               />
             </div>
             <div className="mb-3">
-              <label for="disabledSelect" className="form-label">
+              <label htmlFor="disabledSelect" className="form-label">
                 Disabled select menu
               </label>
               <select id="disabledSelect" className="form-select">
@@ -62,7 +59,7 @@ export default function Home() {
                 />
                 <label
                   className="form-check-label"
-                  for="disabledFieldsetCheck"
+                  htmlFor="disabledFieldsetCheck"
                 ></label>
               </div>
             </div>
