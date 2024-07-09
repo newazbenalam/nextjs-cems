@@ -27,10 +27,17 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 } */
+
+.card-hover:hover {
+  transform: scale(1.2);
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
