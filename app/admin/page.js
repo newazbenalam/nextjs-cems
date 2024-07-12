@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AdminPage() {
@@ -158,12 +159,12 @@ export default function AdminPage() {
                     <div className="card-footer text-center pt-0 px-lg-2 px-1">
                       <p className="mb-4 text-sm mx-auto">
                         {"Don't have an account?"}
-                        <a
-                          href="javascript:;"
+                        <Link
+                          href={"/admin/dashboard"}
                           className="text-info text-gradient font-weight-bold"
                         >
                           Sign up
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>
