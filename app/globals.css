@@ -1,6 +1,20 @@
 /* Import Bootstrap */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+/* @import "/public/assets/css/soft-ui-dashboard.min.css";
+@import "/public/assets/css/soft-ui-dashboard.css";
+@import "/public/assets/css/owl.css";
+@import "/public/assets/css/nucleo-svg.css";
+@import "/public/assets/css/nucleo-icons.css";
+@import "/public/assets/css/fontawesome.css";
+@import "/public/assets/css/flex-slider.css";
+@import "/public/assets/css/animate.css";
+
+
+@import "/public/assets/js/soft-ui-dashboard.js";
+@import "/public/assets/js/soft-ui-dashboard.min.js"; */
+
+
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
