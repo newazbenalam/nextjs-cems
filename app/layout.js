@@ -27,26 +27,6 @@ export default function RootLayout({ children }) {
         {/* <h1>Root layout</h1> */}
         {children}
 
-        <link rel="stylesheet" href="assets/css/nucleo-svg.css" />
-        <link rel="stylesheet" href="assets/css/nucleo-icons.css" />
-        <link rel="stylesheet" href="assets/css/flex-slider.css" />
-        <link rel="stylesheet" href="assets/css/material-dashboard.css" />
-        <link rel="stylesheet" href="assets/css/material-dashboard.css.map" />
-
-        <Script
-          src="https://kit.fontawesome.com/42d5adcbca.js"
-          crossorigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
-          rel="stylesheet"
-        />
-
-        <link
-          id="pagestyle"
-          href="assets/css/material-dashboard.css"
-          rel="stylesheet"
-        />
       </body>
     </html>
   );
