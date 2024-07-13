@@ -7,7 +7,20 @@ import "@/app/globals.css";
 
 export default function CoursesLayout({ children }) {
   return (
-    <>
+    <html lang="en">
+    <head>
+      <link rel="stylesheet" href="assets/css/fontawesome.css" />
+      <link rel="stylesheet" href="assets/css/templatemo-scholar.css" />
+      <link rel="stylesheet" href="assets/css/owl.css" />
+      <link rel="stylesheet" href="assets/css/animate.css" />
+      <link rel="stylesheet" href="assets/css/soft-ui-dashboard.css" />
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+      />
+    </head> 
+    <body>
+      
       <header className="header-area header-sticky">
         <div className="container">
           <div className="row">
@@ -150,6 +163,7 @@ export default function CoursesLayout({ children }) {
           </div>
         </div>
       </footer>
-    </>
+      </body>
+    </html>
   );
 }

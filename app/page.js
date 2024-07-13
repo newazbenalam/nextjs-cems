@@ -10,7 +10,11 @@ export default function Home() {
 
 
   return (
+
+
     <>
+      
+    
   <header className="header-area header-sticky">
     <div className="container">
         <div className="row">
@@ -630,6 +634,7 @@ export default function Home() {
       </div>
     </div>
   </footer>
-    </>
+  </>
+    
   );
 }
