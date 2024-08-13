@@ -66,7 +66,7 @@ export default function DashboardLayout({ children }) {
     </div>
     <div className="sidenav-footer position-absolute w-100 bottom-0 ">
       <div className="mx-3">
-        <a className="btn btn-outline-default1  mt-4 w-100" href="/logout" type="button">Logout</a>
+        <a className="btn btn-outline-default1  mt-4 w-100" href={"/"} type="button">Logout</a>
         {/* <a className="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a> */}
       </div>
     </div>
