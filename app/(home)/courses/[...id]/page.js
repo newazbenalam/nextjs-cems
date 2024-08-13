@@ -1,68 +1,96 @@
 "use client";
 
-import React from "react";
+import { GetSingleCourse } from "@/app/_lib/actions/CoursesUsecase";
+import React, { useEffect } from "react";
+import "@/app/globals.css";
+import Image from "next/image";
+import './style.css';
+
 
 export default function CourseDetail({ params }) {
   const { id } = params;
+  const [course, setCourse] = React.useState([]);
+
+
+  useEffect(() => {
+
+    const getData = async () => {
+      const res = await GetSingleCourse( parseInt(id) );
+      setCourse(res);
+      console.log(course);
+    };
+
+    getData();
+
+  }, []);
 
   return (
     <>
       <div className="container mt-5">
-        <h2>Course Details { id }</h2>
+        <h2>{ course.title }</h2>
         <br />
         <div className="row">
           <div className="col-lg-9">
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis dolorum, veniam in et beatae temporibus aperiam quidem
-              dolorem, vel repellendus, laborum dolores harum? Distinctio ullam
-              quod repellat animi nostrum saepe fuga deleniti itaque deserunt
-              laborum tempora nulla voluptatem officia eius, rem consequuntur
-              reprehenderit ea vel eveniet libero veritatis, reiciendis magnam?
-              Laboriosam minus accusantium fugit earum porro error quia alias,
-              optio odio saepe aut ipsa numquam nisi consectetur amet cumque
-              ipsam tempore, libero, sed modi delectus! Atque ratione aperiam
-              incidunt delectus repudiandae doloribus saepe excepturi,
-              architecto beatae quis, et vitae exercitationem, quas eligendi eos
-              explicabo cumque qui! Ad, exercitationem rem itaque eligendi
-              cumque dolor quidem aut sapiente ducimus tempora commodi. Deserunt
-              laborum tenetur consequuntur modi voluptate, ea optio voluptatum!
-              Voluptas quaerat quod provident, fugit excepturi labore libero
-              perferendis nihil quisquam assumenda aliquid vitae eveniet ex
-              quasi, culpa tempore mollitia cupiditate, debitis voluptate?
-              Ipsam, molestiae quisquam. Est, maxime voluptates veniam porro
-              necessitatibus nemo. Ducimus quidem, voluptatem labore alias
-              aliquid voluptas impedit ad molestiae unde dolore magni ratione,
-              inventore expedita quae iusto in fuga quisquam iste sit
-              consequuntur. Laborum ullam maiores tempore sapiente harum, nemo
-              aliquid nesciunt sint mollitia nam iste qui voluptatibus corporis
-              explicabo soluta asperiores! Autem iste odit et aut vel facilis,
-              exercitationem saepe odio recusandae eos nemo corrupti natus alias
-              quos veritatis ipsum distinctio? Fuga repellendus excepturi
-              quisquam accusantium non molestias sed quia? Vel facere, facilis
-              perferendis officia et provident maxime deleniti quibusdam eveniet
-              eos alias explicabo quod magnam, voluptates reprehenderit vero
-              doloribus. Doloribus dolor est illum facilis possimus laborum
-              voluptatibus corrupti ullam sequi at! Qui debitis sunt atque eaque
-              soluta architecto ullam delectus sequi velit, itaque fugit
-              exercitationem odit esse voluptate? Voluptates eligendi incidunt
-              corporis quos obcaecati harum recusandae dolorem! Culpa minus eius
-              maiores ex aliquam iste ad architecto dolor atque tenetur, eum est
-              ab ratione expedita hic! Consectetur.
+              { course.description }
             </p>
           </div>
 
           <div className=" col-lg-3">
-            <div className="table  ">
+            <div className="table overflow-auto ">
               <table className="border border-collapse">
                 <tr className="border ">
-                  <td>Course Name</td>
-                  <td className="border ">UI Best Practices: {id}</td>
+                  <td>Course Category</td>
+                  <td className="border "> 
+                    { course.category ? course.category.title : "" }
+                    </td>
                 </tr>
                 <tr className="border">
-                  <td>Duration</td>
-                  <td className="border ">22 Hours</td>
+                  <td>Course Duration</td>
+                  <td className="border ">{ course.courseDuration } Hours</td>
                 </tr>
+                <tr className="border">
+                  <td>Class Duration</td>
+                  <td className="border ">{ course.classDuration } Hours</td>
+                </tr>
+                <tr className="border">
+                  <td>Number of classes</td>
+                  <td className="border ">{ course.numberOfClasses } classes</td>
+                </tr>
+                <tr className="border">
+                  <td>Available Seats</td>
+                  <td className="border ">{ course.availableSeats } </td>
+                </tr>
+                <tr className="border">
+                  <td>Number Of Tests</td>
+                  <td className="border ">{ course.numberOfTests } </td>
+                </tr>
+                {
+                  course.testDescription && (
+                    <tr className="border">
+                    <td>Test Description</td>
+                    <td className="border ">{ course.testDescription } </td>
+                  </tr>
+                  )
+                }
+                {
+                  course.averageRating && (
+                    <tr className="border">
+                    <td>Average Rating</td>
+                    <td className="border ">{ course.averageRating } </td>
+                  </tr>
+                  )
+                }
+                {
+                  course.instructor && (
+                    <tr className="border">
+                    <td>Instructor</td>
+                    <td className="border ">{ course.instructor.name } </td>
+                  </tr>
+                  )
+                }
+                
+
                 <tr className="border ">
                   <td>Price</td>
                   <td className="border">$120</td>
@@ -71,7 +99,18 @@ export default function CourseDetail({ params }) {
             </div>
           </div>
         </div>
+      {
+        course.image ? 
+        <img src={ course.image } alt={course.image} className="course-image mt-5 rounded-5"/>
+        : <div className="course-image mt-5 rounded-5 text-center">
+          <div class="spinner-border text-primary " role="status">
+</div>
+        </div>
+      }
+
       </div>
+
+
 
       <div className="section events" id="events">
         <div className="container">
@@ -87,11 +126,11 @@ export default function CourseDetail({ params }) {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <img
+                      <Image
                         height={230}
                         width={180}
                         style={{ objectFit: "cover" }}
-                        src="/assets/images/event-02.jpg"
+                        src={course.image}
                         alt=""
                       />
                     </div>
@@ -99,20 +138,20 @@ export default function CourseDetail({ params }) {
                   <div className="col-lg-9">
                     <ul>
                       <li>
-                        <span className="category">Web Design</span>
-                        <h4>UI Best Practices: {id}</h4>
+                        <span className="category"> { course.category ? course.category.title : ''}</span>
+                        <h4> {course.title }</h4>
                       </li>
                       <li>
                         <span>Date:</span>
-                        <h6>16 Feb 2036</h6>
+                        <h6>{course.deadline ? course.deadline :'16 Feb 2036'}</h6>
                       </li>
                       <li>
                         <span>Duration:</span>
-                        <h6>22 Hours</h6>
+                        <h6> { course.courseDuration } hours</h6>
                       </li>
                       <li>
                         <span>Price:</span>
-                        <h6>$120</h6>
+                        <h6> ${ course.price} </h6>
                       </li>
                     </ul>
                     <a href="#">
