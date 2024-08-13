@@ -87,6 +87,7 @@ model Courses{
   testDescription String? @db.VarChar(255)
   numberOfNotes Int?      @default(0)
   image     String?  @db.VarChar(255)
+  deadline DateTime? @default(now())
 
   numberOfRating Int?      @default(0)
   averageRating   Float?    @default(0)
