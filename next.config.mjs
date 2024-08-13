@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'www.allbanglanewspaper.co',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: '**',
+        pathname: '**',
+      },
     ],
   },
   reactStrictMode: false
