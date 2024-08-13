@@ -52,7 +52,7 @@ export default function CoursesLayout({ children }) {
                     <a href="#services">Services</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#courses">Courses</a>
+                    <Link href="/courses">Courses</Link>
                   </li>
                   <li className="scroll-to-section">
                     <a href="#team">Team</a>

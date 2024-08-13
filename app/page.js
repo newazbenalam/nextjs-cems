@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import BoxCard from "./(components)/BoxCard";
-import Navbar from "./(components)/Navbar";
 import Link from "next/link";
+import "@/app/globals.css";
 
 export default function Home() {
 
