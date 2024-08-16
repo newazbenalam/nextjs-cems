@@ -1,14 +1,14 @@
 /* Import Bootstrap */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+/* 
+@import "/assets/css/owl.css";
+@import "/assets/css/nucleo-svg.css";
+@import "/assets/css/nucleo-icons.css";
+@import "/assets/css/fontawesome.css";
 
-/* @import "/public/assets/css/owl.css";
-@import "/public/assets/css/nucleo-svg.css";
-@import "/public/assets/css/nucleo-icons.css"; */
- @import "/public/assets/css/fontawesome.css";
- 
-/*@import "/public/assets/css/flex-slider.css";
-@import "/public/assets/css/animate.css";
-@import "/public/assets/css/templatemo-scholar.css"; */
+@import "/assets/css/flex-slider.css";
+@import "/assets/css/animate.css";
+@import "/assets/css/templatemo-scholar.css"; */
 
 
 

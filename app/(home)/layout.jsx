@@ -1,14 +1,33 @@
-
+"use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import "@/app/globals.css";
 
+import "../../public/assets/css/templatemo-scholar.css";
+// import "../../public/assets/css/soft-ui-dashboard.css";
+import "../../public/assets/css/nucleo-icons.css";
+import "../../public/assets/css/owl.css";
+import "../../public/assets/css/animate.css";
+// import "../../public/assets/css/fontawesome.css";
 
 export default function CoursesLayout({ children }) {
+
+  useEffect(() => {
+    // set active nav depending on the current page
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach((link) => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    }), []});
+
+
   return (
     <html lang="en">
-    <head>
+    {/* <head>
       <link rel="stylesheet" href="assets/css/fontawesome.css" />
       <link rel="stylesheet" href="assets/css/templatemo-scholar.css" />
       <link rel="stylesheet" href="assets/css/owl.css" />
@@ -18,7 +37,7 @@ export default function CoursesLayout({ children }) {
         rel="stylesheet"
         href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
       />
-    </head> 
+    </head>  */}
     <body>
       
       <header className="header-area header-sticky">
@@ -44,9 +63,9 @@ export default function CoursesLayout({ children }) {
                 </div>
                 <ul className="nav">
                   <li className="scroll-to-section">
-                    <a href="#top" className="active">
+                    <Link  href={"/"} className="active">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="scroll-to-section">
                     <a href="#services">Services</a>
@@ -61,7 +80,7 @@ export default function CoursesLayout({ children }) {
                     <a href="#events">Events</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#contact">Register Now!</a>
+                    <Link href={"/signup"}>Register Now!</Link>
                   </li>
                 </ul>
                 <a className="menu-trigger">

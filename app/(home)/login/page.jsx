@@ -1,14 +1,9 @@
 "use client";
 
+import Link from 'next/link';
 import React from 'react'
+import "../../../public/assets/css/soft-ui-dashboard.css";
 
-// export function PreloadResources() {
-//   ReactDOM.preload('assets/css/nucleo-svg.css', { as: 'stylesheet' })
-//   ReactDOM.preload('assets/css/nucleo-icons.css', { as: 'stylesheet' })
-//   ReactDOM.preload('assets/css/soft-ui-dashboard.css', { as: 'stylesheet' })
- 
-//   return null
-// }
 
 export default function Login() {
   return (
@@ -44,7 +39,7 @@ export default function Login() {
                 <div className="card-footer text-center pt-0 px-lg-2 px-1">
                   <p className="mb-4 text-sm mx-auto">
                     {"Don't have an account?"}
-                    <a href="javascript:;" className="text-purple font-weight-bold">Sign up</a>
+                    <Link href={"/signup"} className="text-purple font-weight-bold">Sign up</Link>
                   </p>
                 </div>
               </div>
