@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react'
 import "../../../public/assets/css/soft-ui-dashboard.css";
+import './style.css';
 import { CreateUser } from '@/app/_lib/actions/UserUsecase';
 import { useRouter } from 'next/navigation'
 
@@ -61,7 +62,6 @@ export default function SignUp() {
                         <div className="mb-3">
                           {/* selection drop down gender option */}
                             <select id="gender" name="gender" className='form-control'>
-                              <option value="none" selected>Gender</option>
                               <option value="Male">Male</option>
                               <option value="Female">Female</option>
                               <option value="Other">other</option>
@@ -78,7 +78,7 @@ export default function SignUp() {
                     </div>
                     <label>Confirm Password</label>
                     <div className="mb-3">
-                      <input type="password" className="form-control" name="confirm-password" placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
+                      <input type="password" className="form-control " name="confirm-password" placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
                     </div>
                     {/* <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="rememberMe" checked=""/>
@@ -87,7 +87,7 @@ export default function SignUp() {
 
                     {error && (
 
-                    <div class="alert alert-primary text-white" role="alert">
+                    <div class="alert alert-primary  text-white" role="alert">
                       <strong>{error}</strong>
                     </div>
                     )}

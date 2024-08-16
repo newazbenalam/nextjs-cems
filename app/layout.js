@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "../public/assets/css/templatemo-scholar.css";
-// import "../public/assets/css/soft-ui-dashboard.css";
+import "../public/assets/css/soft-ui-dashboard.css";
 import "../public/assets/css/nucleo-icons.css";
 import "../public/assets/css/owl.css";
 import "../public/assets/css/animate.css";
