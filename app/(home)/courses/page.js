@@ -1,6 +1,6 @@
 
 "use client";
-
+import { PrismaClient } from '@prisma/client'
 import { GetCourses } from "@/app/_lib/actions/CoursesUsecase";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 export default function CoursesList() {
   const [courses, setCourses] = React.useState([]);
 
-  useEffect(() => { 
+  useEffect(() => {
 
     // fetch api
     // const res = fetch("http://localhost:3000/api/courses");
@@ -23,9 +23,9 @@ export default function CoursesList() {
     //   setCourses(data);
     //   console.log(courses);
     // });
-    
 
-    const getData  = async () => {
+
+    const getData = async () => {
       const res = await GetCourses();
       setCourses(res);
       console.log(res);
@@ -75,29 +75,11 @@ export default function CoursesList() {
           <div className="row event_box">
 
 
-            <div className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-              <div className="events_item">
-                <div className="thumb">
-                  <a href="#">
-                    <img src="assets/images/course-01.jpg" alt="" />
-                  </a>
-                  <span className="category">Webdesign</span>
-                  <span className="price">
-                    <h6>
-                      <em>$</em>160
-                    </h6>
-                  </span>
-                </div>
-                <div className="down-content">
-                  <span className="author">Stella Blair</span>
-                  <h4>Learn Web Design</h4>
-                </div>
-              </div>
-            </div>
+
 
             {courses.map((course) => (
               <div key={course.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-                  <Link href={`/courses/${course.id}`} >
+                <Link href={`/courses/${course.id}`} >
                   <div className="events_item">
                     <div className="thumb">
                       <a href="#">
@@ -115,13 +97,13 @@ export default function CoursesList() {
                       <h4>{course.title}</h4>
                     </div>
                   </div>
-              </Link>
-                </div>
+                </Link>
+              </div>
 
             ))}
-            
 
-            
+
+
           </div>
         </div>
       </section>
