@@ -9,21 +9,16 @@ import "../../public/assets/css/templatemo-scholar.css";
 import "../../public/assets/css/nucleo-icons.css";
 import "../../public/assets/css/owl.css";
 import "../../public/assets/css/animate.css";
+import { usePathname } from "next/navigation";
 // import "../../public/assets/css/fontawesome.css";
 
 export default function CoursesLayout({ children }) {
+  const [route, setRoute] = React.useState('')
+  const pathname = usePathname()
+
   useEffect(() => {
-    // set active nav depending on the current page
-    const navLinks = document.querySelectorAll("nav ul li a");
-    navLinks.forEach((link) => {
-      if (link.href === window.location.href) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    }),
-      [];
-  });
+    setRoute(pathname);
+  }, [pathname])
 
   return (
     <html lang="en">
@@ -61,18 +56,18 @@ export default function CoursesLayout({ children }) {
                     </form>
                   </div>
                   <ul className="nav">
-                    <li className="scroll-to-section">
-                      <Link href={"/"} className="active">
+                    <li className='scroll-to-section'>
+                      <Link className={route === '/' ? ' active' : ''} href={"/"}>
                         Home
                       </Link>
                     </li>
-                    <li className="scroll-to-section">
-                      <a href="/services">Services</a>
+                    <li className='scroll-to-section'>
+                      <Link className={route === '/services' ? 'active' : ''} href="/services">Services</Link>
                     </li>
-                    <li className="scroll-to-section">
-                      <a href="/courses">Courses</a>
+                    <li className='scroll-to-section'>
+                      <Link className={route === '/courses' ? 'active' : ''} href="/courses">Courses</Link>
                     </li>
-                    <li className="scroll-to-section">
+                    <li className='scroll-to-section'>
                       <a href="#team">Team</a>
                     </li>
                     <li className="scroll-to-section">
