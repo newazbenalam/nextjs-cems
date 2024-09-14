@@ -60,8 +60,9 @@ export default function CoursesList() {
                     
                     <div className="row event_box">
 
-
-
+                        {
+                        // spinner 
+                        }
 
                         {services.map((service) => (
                             <div key={service.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design ">

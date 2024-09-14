@@ -1,7 +1,7 @@
 "use client";
 
 import React , { useEffect, useState } from "react";
-import { GetCourses } from "@/app/lib/actions/GetCourses";
+import { GetCourses } from "@/app/_lib/actions/CoursesUsecase";
 
 export default function Dashboard() {
 
