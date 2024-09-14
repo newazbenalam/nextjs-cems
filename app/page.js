@@ -64,7 +64,8 @@ export default function Home() {
                   <li className="scroll-to-section"><Link href={"/courses"}>Courses</Link></li>
                   <li className="scroll-to-section"><a href="#team">Team</a></li>
                   <li className="scroll-to-section"><a href="#events">Events</a></li>
-                  <li className="scroll-to-section"><a href="#contact">Register Now!</a></li>
+                  <li className="scroll-to-section"><a href="#contact">Contact</a></li>
+                  <li className="scroll-to-section"><Link href={"/signup"}>Register Now!</Link></li>
                 </ul>
                 <a className='menu-trigger'>
                   <span>Menu</span>

@@ -9,7 +9,7 @@ export const authenticate = async (prevState, formData) => {
   const { email, password } = Object.fromEntries(formData);
 
   try {
-    if (findUserBasic(email) === null){
+    if (findUserBasic(email, password) === null){
       return "Wrong Credentials";
     }
     const result = await signIn("credentials", {

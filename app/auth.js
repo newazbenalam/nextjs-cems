@@ -35,7 +35,7 @@ export const { signIn, signOut, auth } = NextAuth({
               role: user.type,  // Assuming you have a 'role' or 'type' field
             };
           } else {
-            console.error("Invalid password");
+            // console.error("Invalid password");
             return null;
           }
         } catch (error) {
