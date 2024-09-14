@@ -1,11 +1,41 @@
 "use client";
 
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import "../../../public/assets/css/soft-ui-dashboard.css";
+import { authenticate } from '@/app/_lib/auth/useAuthentication';
+import { ro } from 'faker/lib/locales';
+import { useRouter } from 'next/navigation';
 
 
 export default function Login() {
+  const [state, setState] = useState( null, { error: null });
+  
+  const router = useRouter();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData(event.target);
+  
+    // Convert FormData to an object for logging and passing
+    const data = Object.fromEntries(formData.entries());
+  
+    console.log(data); // Logs the form values as an object { email: "example", password: "12345" }
+  
+    // Assuming authenticate accepts the form data as an object
+    const newState = await authenticate(state, formData);
+  
+    setState(newState);
+  
+    if (newState === "Wrong Credentials") {
+      return;
+    }
+  
+    router.push("/dashboard");
+  };
+  
+
   return (
     <main className="main-content  mt-0">
     <section>
@@ -18,21 +48,21 @@ export default function Login() {
                   <p className="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div className="card-body">
-                  <form role="form">
+                  <form onSubmit={handleSubmit}>
                     <label>Email</label>
                     <div className="mb-3">
-                      <input type="email" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"/>
+                      <input type="email" name="email" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" required/>
                     </div>
                     <label>Password</label>
                     <div className="mb-3">
-                      <input type="email" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
+                      <input type="password" name="password" className="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" required/>
                     </div>
                     {/* <div className="form-check form-switch">
                       <input className="form-check-input" type="checkbox" id="rememberMe" checked=""/>
                       <label className="form-check-label" for="rememberMe">Remember me</label>
                     </div> */}
                     <div className="text-center">
-                      <button type="button" className="btn btn-purple w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" className="btn btn-purple w-100 mt-4 mb-0">Sign in</button>
                     </div>
                   </form>
                 </div>

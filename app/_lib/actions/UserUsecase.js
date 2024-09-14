@@ -77,3 +77,21 @@ export const DeleteUser = async (id) => {
     return {};
   }
 }
+
+export const findUserBasic = async (email, pass) => {
+  try {
+    const user = await db.users.findFirst({
+      where: {
+        email: email,
+      },
+    });
+
+    if (user?.password != pass){
+      return null;
+    }
+    console.log(user);
+    return user;
+  } catch (error) {
+    console.error(error);
+  }
+}

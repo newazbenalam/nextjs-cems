@@ -1,5 +1,9 @@
+"use client";
+
 import React from 'react'
 import '@/app/globals.css'
+import { logOut } from '../_lib/auth/useAuthentication'
+import { useRouter } from 'next/navigation';
 
 export function PreloadResources() {
   // ReactDOM.preload('assets/css/nucleo-svg.css', { as: 'stylesheet' })
@@ -11,6 +15,13 @@ export function PreloadResources() {
 }
 
 export default function DashboardLayout({ children }) {
+  const router = useRouter();
+
+  const handleLogOut = async () => {
+    await logOut();
+    router.push('/login');
+  }
+
   return (
     <html lang="en">
     <head>
@@ -66,7 +77,7 @@ export default function DashboardLayout({ children }) {
     </div>
     <div className="sidenav-footer position-absolute w-100 bottom-0 ">
       <div className="mx-3">
-        <a className="btn btn-outline-default1  mt-4 w-100" href={"/"} type="button">Logout</a>
+        <button className="btn btn-outline-default1  mt-4 w-100" onClick={handleLogOut} type="button">Logout</button>
         {/* <a className="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a> */}
       </div>
     </div>
@@ -183,9 +194,9 @@ export default function DashboardLayout({ children }) {
               </ul>
             </li>
             <li className="nav-item d-flex align-items-center">
-              <a href="../pages/sign-in.html" className="nav-link text-body font-weight-bold px-0">
+              <a onClick={() => logOut} className="nav-link text-body font-weight-bold px-0">
                 <i className="fa fa-user me-sm-1"></i>
-                <span className="d-sm-inline d-none">Sign In</span>
+                <span className="d-sm-inline d-none">User</span>
               </a>
             </li>
           </ul>
