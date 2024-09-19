@@ -61,8 +61,23 @@ export default function Login() {
                       <input className="form-check-input" type="checkbox" id="rememberMe" checked=""/>
                       <label className="form-check-label" for="rememberMe">Remember me</label>
                     </div> */}
+                    {/* show error dialog for success*/}
+                    {state === 'Success' ? (
+                      <div className="alert alert-success text-white font-weight-bold" role="alert">
+                        Login successful
+                      </div>
+                    ) :
+
+                    (state &&  (
+                      <div className="alert alert-danger text-white font-weight-bold" role="alert">
+                        {state}
+                      </div>
+                    ) 
+                    )}
+                    
+
                     <div className="text-center">
-                      <button type="submit" className="btn btn-purple w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" className="btn btn-purple w-100 mt-1 mb-0">Sign in</button>
                     </div>
                   </form>
                 </div>

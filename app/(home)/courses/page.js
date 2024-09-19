@@ -4,6 +4,8 @@ import { PrismaClient } from '@prisma/client'
 import { GetCourses } from "@/app/_lib/actions/CoursesUsecase";
 import Link from "next/link";
 import React, { useEffect } from "react";
+import Image from "next/image";
+
 
 export default function CoursesList() {
   const [courses, setCourses] = React.useState([]);
@@ -82,9 +84,13 @@ export default function CoursesList() {
                 <Link href={`/courses/${course.id}`} >
                   <div className="events_item">
                     <div className="thumb">
-                      <a href="#">
-                        <img src="assets/images/course-01.jpg" alt="" />
-                      </a>
+                      {/* image with fitbox cover */}
+                      <Image
+                        width={336}
+                        height={254}
+                        style={{ objectFit: "cover" }}
+                        src={course.image}
+                        alt=""/>
                       <span className="category">{course.category.title}</span>
                       <span className="price">
                         <h6>

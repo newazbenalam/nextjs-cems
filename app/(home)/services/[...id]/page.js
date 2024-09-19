@@ -1,23 +1,23 @@
 "use client";
 
-import { GetSingleCourse } from "@/app/_lib/actions/CoursesUsecase";
 import React, { useEffect } from "react";
 import "@/app/globals.css";
 import './style.css';
 import { Image } from "react-bootstrap";
+import { GetSingleService } from "@/app/_lib/actions/ServicesUsecase";
 
 
-export default function CourseDetail({ params }) {
+export default function ServiceDetail({ params }) {
   const { id } = params;
-  const [course, setCourse] = React.useState([]);
+  const [service, setService] = React.useState([]);
 
 
   useEffect(() => {
 
     const getData = async () => {
-      const res = await GetSingleCourse( parseInt(id) );
-      setCourse(res);
-      console.log(course);
+      const res = await GetSingleService( parseInt(id) );
+      setService(res);
+      console.log(service);
     };
 
     getData();
@@ -27,65 +27,65 @@ export default function CourseDetail({ params }) {
   return (
     <>
       <div className="container mt-5">
-        <h2>{ course.title }</h2>
+        <h2>{ service.title }</h2>
         <br />
         <div className="row">
           <div className="col-lg-9">
             <p>
-              { course.description }
+              { service.description }
             </p>
           </div>
 
-          <div className=" col-lg-3">
+          {/* <div className=" col-lg-3">
             <div className="table overflow-auto ">
               <table className="border border-collapse">
                 <tr className="border ">
-                  <td>Course Category</td>
+                  <td>Service Category</td>
                   <td className="border "> 
-                    { course.category ? course.category.title : "" }
+                    { service.category ? service.category.title : "" }
                     </td>
                 </tr>
                 <tr className="border">
-                  <td>Course Duration</td>
-                  <td className="border ">{ course.courseDuration } Hours</td>
+                  <td>Service Duration</td>
+                  <td className="border ">{ service.serviceDuration } Hours</td>
                 </tr>
                 <tr className="border">
                   <td>Class Duration</td>
-                  <td className="border ">{ course.classDuration } Hours</td>
+                  <td className="border ">{ service.classDuration } Hours</td>
                 </tr>
                 <tr className="border">
                   <td>Number of classes</td>
-                  <td className="border ">{ course.numberOfClasses } classes</td>
+                  <td className="border ">{ service.numberOfClasses } classes</td>
                 </tr>
                 <tr className="border">
                   <td>Available Seats</td>
-                  <td className="border ">{ course.availableSeats } </td>
+                  <td className="border ">{ service.availableSeats } </td>
                 </tr>
                 <tr className="border">
                   <td>Number Of Tests</td>
-                  <td className="border ">{ course.numberOfTests } </td>
+                  <td className="border ">{ service.numberOfTests } </td>
                 </tr>
                 {
-                  course.testDescription && (
+                  service.testDescription && (
                     <tr className="border">
                     <td>Test Description</td>
-                    <td className="border ">{ course.testDescription } </td>
+                    <td className="border ">{ service.testDescription } </td>
                   </tr>
                   )
                 }
                 {
-                  course.averageRating && (
+                  service.averageRating && (
                     <tr className="border">
                     <td>Average Rating</td>
-                    <td className="border ">{ course.averageRating } </td>
+                    <td className="border ">{ service.averageRating } </td>
                   </tr>
                   )
                 }
                 {
-                  course.instructor && (
+                  service.instructor && (
                     <tr className="border">
                     <td>Instructor</td>
-                    <td className="border ">{ course.instructor.name } </td>
+                    <td className="border ">{ service.instructor.name } </td>
                   </tr>
                   )
                 }
@@ -97,17 +97,25 @@ export default function CourseDetail({ params }) {
                 </tr>
               </table>
             </div>
-          </div>
+          </div> */}
         </div>
-      {
-        course.image ? 
-        <Image src={ course.image } alt={course.image} className="course-image mt-5 rounded-5"/>
-        : <div className="course-image mt-5 rounded-5 text-center">
-          <div class="spinner-border text-primary " role="status">
-</div>
-        </div>
-      }
 
+        {/* auto sized images arrat grid view depending on array length */}
+        <br /><br />
+        <div className="row justify-content-center">
+          {service.images &&
+            service.images.map((image, index) => (
+              <div key={index} className="col-lg-3">
+                <Image
+                  className="rounded-2"
+                  style={{ objectFit: "cover" }}
+                  src={image.imageUrl}
+                  alt=""
+                />
+              </div>
+            ))}
+
+      </div>
       </div>
 
 
@@ -127,10 +135,10 @@ export default function CourseDetail({ params }) {
                   <div className="col-lg-3">
                     <div className="image">
                       <Image
-                        height={230}
-                        width={180}
+                        // height={230}
+                        // width={180}
                         style={{ objectFit: "cover" }}
-                        src={course.image}
+                        src={service.thumbnail}
                         alt=""
                       />
                     </div>
@@ -138,23 +146,23 @@ export default function CourseDetail({ params }) {
                   <div className="col-lg-9">
                     <ul>
                       <li>
-                        <span className="category"> { course.category ? course.category.title : ''}</span>
-                        <h4> {course.title }</h4>
+                        <span className="category"> { service.category ? service.category.title : ''}</span>
+                        <h4> {service.title }</h4>
                       </li>
-                      <li>
+                      {/* <li>
                         <span>Date:</span>
-                        <h6>{course.deadline ?
+                        <h6>{service.deadline ?
                         // format datetime to date only
-                         Date(course.deadline).split(':')[0].split(' ').slice(0, 4).join(' ')
+                         Date(service.deadline).split(':')[0].split(' ').slice(0, 4).join(' ')
                          :'16 Feb 2036'}</h6>
                       </li>
                       <li>
                         <span>Duration:</span>
-                        <h6> { course.courseDuration } hours</h6>
-                      </li>
+                        <h6> { service.serviceDuration } hours</h6>
+                      </li> */}
                       <li>
-                        <span>Price:</span>
-                        <h6> ${ course.price} </h6>
+                        <span>Contact:</span>
+                        <h6> { service.contact} </h6>
                       </li>
                     </ul>
                     <a href="#">

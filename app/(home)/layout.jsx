@@ -165,15 +165,15 @@ export default function CoursesLayout({ children }) {
           <div className="container">
             <div className="col-lg-12">
               <p>
-                Copyright © 2036 Scholar Organization. All rights reserved.
+                Copyright © 2024 IT Bangla Ltd. All rights reserved.
                 &nbsp;&nbsp;&nbsp; Design:{" "}
-                <a href="https://templatemo.com" rel="nofollow" target="_blank">
-                  TemplateMo
+                <a href="#" rel="nofollow" target="_blank">
+                  Mehedi Noor Khan
                 </a>{" "}
-                Distribution:{" "}
-                <a href="https://themewagon.com" rel="nofollow" target="_blank">
-                  ThemeWagon
-                </a>
+                {/* Distribution:{" "}
+                <a href="#" rel="nofollow" target="_blank">
+                  Mehedi Noor Khan
+                </a> */}
               </p>
             </div>
           </div>

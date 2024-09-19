@@ -79,22 +79,17 @@ export const DeleteUser = async (id) => {
 }
 
 export const findUserBasic = async (email, pass) => {
+// handle the error if the user is not found
   try {
-    const user = await db.users.findFirst({
+    const user = await db.Users.findFirst({
       where: {
         email: email,
-      },
+        password: pass
+      }
     });
-
-    if (user?.password != pass){
-      return null;
-    }
-    if (user.password != pass) {
-      return null;
-    }
-    console.log(user);
     return user;
   } catch (error) {
-    console.error(error);
+    console.error("findUserBasic", error);
+    return error;
   }
 }

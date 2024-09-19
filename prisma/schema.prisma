@@ -179,7 +179,7 @@ model Services{
 
   details String? @db.Text
   relatedServices String? @db.Text
-  constact String? @db.Text
+  contact String? @db.Text @default("")
 
   images Images[]
 
@@ -192,8 +192,8 @@ model Images{
   status   Boolean  @default(true)
   imageUrl     String?  @db.VarChar(255)
 
-  services Services @relation(fields: [servicesId], references: [id])
-  servicesId Int
+  services Services? @relation(fields: [servicesId], references: [id])
+  servicesId Int?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())

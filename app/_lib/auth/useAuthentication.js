@@ -9,9 +9,13 @@ export const authenticate = async (prevState, formData) => {
   const { email, password } = Object.fromEntries(formData);
 
   try {
-    if (findUserBasic(email, password) === null){
+    const userFind = await findUserBasic(email, password);
+
+    if (!userFind || userFind.error) {
+      
       return "Wrong Credentials";
     }
+
     const result = await signIn("credentials", {
       redirect: false,  // Disable automatic redirect for better control
       email,
