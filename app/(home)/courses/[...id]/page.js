@@ -101,7 +101,7 @@ export default function CourseDetail({ params }) {
         </div>
       {
         course.image ? 
-        <img src={ course.image } alt={course.image} className="course-image mt-5 rounded-5"/>
+        <Image src={ course.image } alt={course.image} className="course-image mt-5 rounded-5"/>
         : <div className="course-image mt-5 rounded-5 text-center">
           <div class="spinner-border text-primary " role="status">
 </div>
