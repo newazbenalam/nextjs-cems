@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 import { GetCourses } from "./_lib/actions/CoursesUsecase";
+import { Image } from "react-bootstrap";
 
 export default function Home() {
 
@@ -138,7 +139,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/service-01.png" alt="online degrees" />
+                  <Image src="assets/images/service-01.png" alt="online degrees" />
                 </div>
                 <div className="main-content">
                   <h4>Online Degrees</h4>
@@ -152,7 +153,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/service-02.png" alt="short courses" />
+                  <Image src="assets/images/service-02.png" alt="short courses" />
                 </div>
                 <div className="main-content">
                   <h4>Short Courses</h4>
@@ -166,7 +167,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <img src="assets/images/service-03.png" alt="web experts" />
+                  <Image src="assets/images/service-03.png" alt="web experts" />
                 </div>
                 <div className="main-content">
                   <h4>Web Experts</h4>
@@ -281,7 +282,7 @@ export default function Home() {
                   <div className="events_item">
                     <div className="thumb">
                       <a href="#">
-                        <img src="assets/images/course-01.jpg" alt="" />
+                        <Image src="assets/images/course-01.jpg" alt="" />
                       </a>
                       <span className="category">{course.category.title}</span>
                       <span className="price">
@@ -347,7 +348,7 @@ export default function Home() {
             <div className="col-lg-3 col-md-6">
               <div className="team-member">
                 <div className="main-content">
-                  <img src="assets/images/member-01.jpg" alt="" />
+                  <Image src="assets/images/member-01.jpg" alt="" />
                   <span className="category">UX Teacher</span>
                   <h4>Sophia Rose</h4>
                   <ul className="social-icons">
@@ -361,7 +362,7 @@ export default function Home() {
             <div className="col-lg-3 col-md-6">
               <div className="team-member">
                 <div className="main-content">
-                  <img src="assets/images/member-02.jpg" alt="" />
+                  <Image src="assets/images/member-02.jpg" alt="" />
                   <span className="category">Graphic Teacher</span>
                   <h4>Cindy Walker</h4>
                   <ul className="social-icons">
@@ -375,7 +376,7 @@ export default function Home() {
             <div className="col-lg-3 col-md-6">
               <div className="team-member">
                 <div className="main-content">
-                  <img src="assets/images/member-03.jpg" alt="" />
+                  <Image src="assets/images/member-03.jpg" alt="" />
                   <span className="category">Full Stack Master</span>
                   <h4>David Hutson</h4>
                   <ul className="social-icons">
@@ -389,7 +390,7 @@ export default function Home() {
             <div className="col-lg-3 col-md-6">
               <div className="team-member">
                 <div className="main-content">
-                  <img src="assets/images/member-04.jpg" alt="" />
+                  <Image src="assets/images/member-04.jpg" alt="" />
                   <span className="category">Digital Animator</span>
                   <h4>Stella Blair</h4>
                   <ul className="social-icons">
@@ -412,7 +413,7 @@ export default function Home() {
                 <div className="item">
                   <p>“Please tell your friends or collegues about TemplateMo website. Anyone can access the website to download free templates. Thank you for visiting.”</p>
                   <div className="author">
-                    <img src="assets/images/testimonial-author.jpg" alt="" />
+                    <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">Full Stack Master</span>
                     <h4>Claude David</h4>
                   </div>
@@ -420,7 +421,7 @@ export default function Home() {
                 <div className="item">
                   <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.”</p>
                   <div className="author">
-                    <img src="assets/images/testimonial-author.jpg" alt="" />
+                    <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">UI Expert</span>
                     <h4>Thomas Jefferson</h4>
                   </div>
@@ -428,7 +429,7 @@ export default function Home() {
                 <div className="item">
                   <p>“Scholar is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
                   <div className="author">
-                    <img src="assets/images/testimonial-author.jpg" alt="" />
+                    <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">Digital Animator</span>
                     <h4>Stella Blair</h4>
                   </div>
@@ -460,7 +461,7 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <img src="assets/images/event-01.jpg" alt="" />
+                      <Image src="assets/images/event-01.jpg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">
@@ -492,7 +493,7 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <img src="assets/images/event-02.jpg" alt="" />
+                      <Image src="assets/images/event-02.jpg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">
@@ -524,7 +525,7 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <img src="assets/images/event-03.jpg" alt="" />
+                      <Image src="assets/images/event-03.jpg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">

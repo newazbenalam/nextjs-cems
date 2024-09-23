@@ -177,7 +177,7 @@ export default function ServiceDetail({ params }) {
             <div className="row">
               <div className="col-lg-3">
                 <div className="image">
-                  <img src="assets/images/event-02.jpg" alt="" />
+                  <Image src="assets/images/event-02.jpg" alt="" />
                 </div>
               </div>
               <div className="col-lg-9">
@@ -209,7 +209,7 @@ export default function ServiceDetail({ params }) {
             <div className="row">
               <div className="col-lg-3">
                 <div className="image">
-                  <img src="assets/images/event-03.jpg" alt="" />
+                  <Image src="assets/images/event-03.jpg" alt="" />
                 </div>
               </div>
               <div className="col-lg-9">

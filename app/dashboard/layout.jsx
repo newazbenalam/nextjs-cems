@@ -48,10 +48,10 @@ export default function DashboardLayout({ children }) {
   <aside className="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div className="sidenav-header">
       <i className="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a className="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+      <Link className="navbar-brand m-0 text-center" href="/dashboard ">
         {/* <Image src="../assets/img/logo-ct.png" width={40} height={40} alt="main_logo"/> */}
-        <span className="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
-      </a>
+        <span className="ms-1 font-weight-bold text-white ">CEMS</span>
+      </Link>
     </div>
     <hr className="horizontal light mt-0 mb-2"/>
     <div className="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
@@ -92,7 +92,7 @@ export default function DashboardLayout({ children }) {
   </aside>
   <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
-    <nav className="navbar navbar-main navbar-expand-lg px-0 mr-4 ml-2  shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+    <nav className="navbar navbar-main navbar-expand-lg px-0 mr-4 ml-0  shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
       <div className="container-fluid py-1 pr-3 pl-0">
         <nav aria-label="breadcrumb">
           <div className='pt-3 ml-0 pl-0'>

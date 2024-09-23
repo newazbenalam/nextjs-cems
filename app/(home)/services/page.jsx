@@ -4,6 +4,7 @@
 import { GetServices } from '@/app/_lib/actions/ServicesUsecase';
 import Link from "next/link";
 import React, { useEffect } from "react";
+import { Image } from 'react-bootstrap';
 
 export default function CoursesList() {
     const [services, setServices] = React.useState([]);
@@ -70,7 +71,7 @@ export default function CoursesList() {
                                     <div className="events_item shadow">
                                         <div className="thumb">
                                             <a href="#">
-                                                <img src={service.thumbnail} alt="" />
+                                                <Image src={service.thumbnail} alt="" />
                                             </a>
                                         </div>
                                         <div className="down-content">
