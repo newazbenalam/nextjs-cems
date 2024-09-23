@@ -2,6 +2,7 @@
 
 import React , { useEffect, useState } from "react";
 import { GetCourses } from "@/app/_lib/actions/CoursesUsecase";
+import { Image } from "react-bootstrap";
 
 export default function Dashboard() {
 
@@ -27,7 +28,7 @@ export default function Dashboard() {
           <div className="card">
             <div className="card-header p-3 pt-2">
               <div className="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                <i className="fa fa-calendar opacity-10"></i>
+                <i className="fa fa-book-reader opacity-10"></i>
               </div>
               <div className="text-end pt-1">
                 <p className="text-sm mb-0 text-capitalize">{"Courses"}</p>
@@ -44,7 +45,7 @@ export default function Dashboard() {
           <div className="card">
             <div className="card-header p-3 pt-2">
               <div className="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                <i className="material-icons opacity-10">person</i>
+                <i className="fa fa-person opacity-10"></i>
               </div>
               <div className="text-end pt-1">
                 <p className="text-sm mb-0 text-capitalize">{"Today's Users"}</p>
@@ -61,7 +62,7 @@ export default function Dashboard() {
           <div className="card">
             <div className="card-header p-3 pt-2">
               <div className="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                <i className="material-icons opacity-10">person</i>
+                <i className="fa fa-running opacity-10"></i>
               </div>
               <div className="text-end pt-1">
                 <p className="text-sm mb-0 text-capitalize">New Clients</p>
@@ -78,7 +79,7 @@ export default function Dashboard() {
           <div className="card">
             <div className="card-header p-3 pt-2">
               <div className="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                <i className="material-icons opacity-10">weekend</i>
+                <i className="fa fa-calendar-week opacity-10"></i>
               </div>
               <div className="text-end pt-1">
                 <p className="text-sm mb-0 text-capitalize">Sales</p>
@@ -172,9 +173,9 @@ export default function Dashboard() {
                       <i className="fa fa-ellipsis-v text-secondary"></i>
                     </a>
                     <ul className="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                      <li><a className="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                      <li><a className="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                      <li><a className="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                      <li><a className="dropdown-item border-radius-md" href="#">Action</a></li>
+                      <li><a className="dropdown-item border-radius-md" href="#">Another action</a></li>
+                      <li><a className="dropdown-item border-radius-md" href="#">Something else here</a></li>
                     </ul>
                   </div>
                 </div>
@@ -208,17 +209,17 @@ export default function Dashboard() {
                         </td>
                         <td>
                           <div className="avatar-group mt-2">
-                            <a href="javascript:;" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                              <img src="../assets/img/team-1.jpg" alt="team1"/>
+                            <a href="#" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                              <Image src="../assets/img/team-1.jpg" alt="team1"/>
                             </a>
-                            <a href="javascript:;" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                              <img src="../assets/img/team-2.jpg" alt="team2"/>
+                            <a href="#" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                              <Image src="../assets/img/team-2.jpg" alt="team2"/>
                             </a>
-                            <a href="javascript:;" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                              <img src="../assets/img/team-3.jpg" alt="team3"/>
+                            <a href="#" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                              <Image src="../assets/img/team-3.jpg" alt="team3"/>
                             </a>
-                            <a href="javascript:;" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                              <img src="../assets/img/team-4.jpg" alt="team4"/>
+                            <a href="#" className="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                              <Image src="../assets/img/team-4.jpg" alt="team4"/>
                             </a>
                           </div>
                         </td>
@@ -262,7 +263,7 @@ export default function Dashboard() {
               <div className="timeline timeline-one-side">
                 <div className="timeline-block mb-3">
                   <span className="timeline-step">
-                    <i className="material-icons text-success text-gradient">notifications</i>
+                    <i className="fa fa-bell text-success text-gradient"></i>
                   </span>
                   <div className="timeline-content">
                     <h6 className="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
@@ -271,14 +272,14 @@ export default function Dashboard() {
                 </div>
                 <div className="timeline-block mb-3">
                   <span className="timeline-step">
-                    <i className="material-icons text-danger text-gradient">code</i>
+                    <i className="fa fa-code text-danger text-gradient"></i>
                   </span>
                   <div className="timeline-content">
                     <h6 className="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
                     <p className="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
                   </div>
                 </div>
-                <div className="timeline-block mb-3">
+                {/* <div className="timeline-block mb-3">
                   <span className="timeline-step">
                     <i className="material-icons text-info text-gradient">shopping_cart</i>
                   </span>
@@ -313,7 +314,7 @@ export default function Dashboard() {
                     <h6 className="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
                     <p className="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -353,80 +354,7 @@ export default function Dashboard() {
       </footer> */}
     </div>
   </main>
-  <div className="fixed-plugin">
-    <a className="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i className="material-icons py-2">settings</i>
-    </a>
-    <div className="card shadow-lg">
-      <div className="card-header pb-0 pt-3">
-        <div className="float-start">
-          <h5 className="mt-3 mb-0">Material UI Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div className="float-end mt-4">
-          <button className="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i className="material-icons">clear</i>
-          </button>
-        </div>
-        {/* <!-- End Toggle Button --> */}
-      </div>
-      <hr className="horizontal dark my-1"/>
-      <div className="card-body pt-sm-3 pt-0">
-        {/* <!-- Sidebar Backgrounds --> */}
-        <div>
-          <h6 className="mb-0">Sidebar Colors</h6>
-        </div>
-        <a href="javascript:void(0)" className="switch-trigger background-color">
-          <div className="badge-colors my-2 text-start">
-            <span className="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span className="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span className="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span className="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span className="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span className="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-        {/* <!-- Sidenav Type --> */}
-        <div className="mt-3">
-          <h6 className="mb-0">Sidenav Type</h6>
-          <p className="text-sm">Choose between 2 different sidenav types.</p>
-        </div>
-        <div className="d-flex">
-          <button className="btn bg-gradient-dark px-3 mb-2 active" data-className="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
-          <button className="btn bg-gradient-dark px-3 mb-2 ms-2" data-className="bg-transparent" onclick="sidebarType(this)">Transparent</button>
-          <button className="btn bg-gradient-dark px-3 mb-2 ms-2" data-className="bg-white" onclick="sidebarType(this)">White</button>
-        </div>
-        <p className="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        {/* <!-- Navbar Fixed --> */}
-        <div className="mt-3 d-flex">
-          <h6 className="mb-0">Navbar Fixed</h6>
-          <div className="form-check form-switch ps-0 ms-auto my-auto">
-            <input className="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)"/>
-          </div>
-        </div>
-        <hr className="horizontal dark my-3"/>
-        <div className="mt-2 d-flex">
-          <h6 className="mb-0">Light / Dark</h6>
-          <div className="form-check form-switch ps-0 ms-auto my-auto">
-            <input className="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)"/>
-          </div>
-        </div>
-        <hr className="horizontal dark my-sm-4"/>
-        <a className="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
-        <a className="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
-        <div className="w-100 text-center">
-          <a className="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-          <h6 className="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" className="btn btn-dark mb-0 me-2" target="_blank">
-            <i className="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard" className="btn btn-dark mb-0 me-2" target="_blank">
-            <i className="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
     </>
   )

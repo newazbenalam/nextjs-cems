@@ -1,21 +1,33 @@
 "use client";
 
-import React from 'react'
+import { useEffect, useState } from 'react'
 import '@/app/globals.css'
 import { logOut } from '../_lib/auth/useAuthentication'
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname  } from 'next/navigation';
+import './style.css';
+import { Image } from 'react-bootstrap';
+import Script from 'next/script';
+import Link from 'next/link';
+// import '@/../public/assets/js/material-dashboard.js';
 
 export function PreloadResources() {
   // ReactDOM.preload('assets/css/nucleo-svg.css', { as: 'stylesheet' })
   // ReactDOM.preload('assets/css/nucleo-icons.css', { as: 'stylesheet' })
   ReactDOM.preload('assets/css/material-dashboard.css', { as: 'stylesheet' })
   ReactDOM.preload('assets/css/material-dashboard.css.map', { as: 'stylesheet' })
+  // ReactDOM.preload('@/../public/assets/js/material-dashboard.js', { as: 'script/javascript' })
  
   return null
 }
 
 export default function DashboardLayout({ children }) {
   const router = useRouter();
+  const [route, setRoute] = useState('')
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setRoute(pathname);
+  }, [pathname])
 
   const handleLogOut = async () => {
     await logOut();
@@ -25,15 +37,11 @@ export default function DashboardLayout({ children }) {
   return (
     <html lang="en">
     <head>
-      <link rel="stylesheet" href="assets/css/fontawesome.css" />
-      <link rel="stylesheet" href="assets/css/templatemo-scholar.css" />
-      <link rel="stylesheet" href="assets/css/owl.css" />
-      <link rel="stylesheet" href="assets/css/animate.css" />
-      <link rel="stylesheet" href="assets/css/material-dashboard.css" />
       <link
         rel="stylesheet"
         href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
       />
+      <Script src='assets/js/material-dashboard.js' async />
     </head> 
     <body className="g-sidenav-show  bg-gray-200">
       
@@ -49,20 +57,20 @@ export default function DashboardLayout({ children }) {
     <div className="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link text-white active bg-purple" href="../pages/dashboard.html">
+          <Link className={route === '/dashboard' ? 'bg-purple active nav-link text-white' : 'nav-link text-white'} href={'/dashboard'}>
             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i className="fa fa-home-alt opacity-10"/>
             </div>
             <span className="nav-link-text ms-1">Dashboard</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white " href="../pages/tables.html">
+          <Link className={route === '/dashboard/users' ? 'bg-purple active nav-link text-white' : 'nav-link text-white'} href={'/dashboard/users'}>
             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i className="fa fa-table opacity-10"/>
+              <i className="fa fa-users opacity-10"/>
             </div>
-            <span className="nav-link-text ms-1">Tables</span>
-          </a>
+            <span className="nav-link-text ms-1">Users</span>
+          </Link>
         </li>
         <li className="nav-item">
           <a className="nav-link text-white " href="../pages/billing.html">
@@ -84,30 +92,34 @@ export default function DashboardLayout({ children }) {
   </aside>
   <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
-    <nav className="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
-      <div className="container-fluid py-1 px-3">
+    <nav className="navbar navbar-main navbar-expand-lg px-0 mr-4 ml-2  shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+      <div className="container-fluid py-1 pr-3 pl-0">
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li className="breadcrumb-item text-sm"><a className="opacity-5 text-dark" href="javascript:;">UserAdmin</a></li>
-          </ol>
-          <h6 className="font-weight-bolder mb-0">Dashboard</h6>
-        </nav>
-        <div className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div className='pt-3 ml-0 pl-0'>
           <div className="ms-md-auto pe-md-3 d-flex align-items-center">
             <div className="input-group input-group-outline">
               <label className="form-label">Type here...</label>
               <input type="text" className="form-control"/>
             </div>
           </div>
+          </div>
+        </nav>
+        <div className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div className="ms-md-auto pe-md-3 d-flex align-items-center">
+            {/* <div className="input-group input-group-outline">
+              <label className="form-label">Type here...</label>
+              <input type="text" className="form-control"/>
+            </div> */}
+          </div>
           <ul className="navbar-nav  justify-content-end">
-            <li className="nav-item d-flex align-items-center">
+            {/* <li className="nav-item d-flex align-items-center">
               <a className="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
             </li>
             <li className="mt-2">
               <a className="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-            </li>
+            </li> */}
             <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link text-body p-0" id="iconNavbarSidenav">
+              <a href="#" className="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div className="sidenav-toggler-inner">
                   <i className="sidenav-toggler-line"></i>
                   <i className="sidenav-toggler-line"></i>
@@ -116,20 +128,20 @@ export default function DashboardLayout({ children }) {
               </a>
             </li>
             <li className="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link text-body p-0">
+              <a href="#" className="nav-link text-body p-0">
                 <i className="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
             <li className="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" className="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i className="fa fa-bell cursor-pointer"></i>
               </a>
               <ul className="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                 <li className="mb-2">
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a className="dropdown-item border-radius-md" href="#">
                     <div className="d-flex py-1">
                       <div className="my-auto">
-                        <img src="../assets/img/team-2.jpg" className="avatar avatar-sm  me-3 "/>
+                        <Image alt='' src="../assets/img/team-2.jpg" className="avatar avatar-sm  me-3 "/>
                       </div>
                       <div className="d-flex flex-column justify-content-center">
                         <h6 className="text-sm font-weight-normal mb-1">
@@ -144,10 +156,10 @@ export default function DashboardLayout({ children }) {
                   </a>
                 </li>
                 <li className="mb-2">
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a className="dropdown-item border-radius-md" href="#">
                     <div className="d-flex py-1">
                       <div className="my-auto">
-                        <img src="../assets/img/small-logos/logo-spotify.svg" className="avatar avatar-sm bg-gradient-dark  me-3 "/>
+                        <Image alt='' src="../assets/img/small-logos/logo-spotify.svg" className="avatar avatar-sm bg-gradient-dark  me-3 "/>
                       </div>
                       <div className="d-flex flex-column justify-content-center">
                         <h6 className="text-sm font-weight-normal mb-1">
@@ -162,7 +174,7 @@ export default function DashboardLayout({ children }) {
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a className="dropdown-item border-radius-md" href="#">
                     <div className="d-flex py-1">
                       <div className="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
                         {/* <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
