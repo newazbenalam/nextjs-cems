@@ -1,18 +1,12 @@
 'use client';
 
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function DashboardService({ params }) {
 
-    const { serviceId } = params;
-    const [id, setId] = useState();
-
+    const { id } = params;
 
     useEffect(() => {
-        setId(parseInt(serviceId));
-        console.log(serviceId, ' ', id)
     }, [])
 
 
