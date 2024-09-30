@@ -15,7 +15,7 @@ export default function ServiceDetail({ params }) {
   useEffect(() => {
 
     const getData = async () => {
-      const res = await GetSingleService( parseInt(id) );
+      const res = await GetSingleService(parseInt(id));
       setService(res);
       console.log(service);
     };
@@ -27,12 +27,12 @@ export default function ServiceDetail({ params }) {
   return (
     <>
       <div className="container mt-5">
-        <h2>{ service.title }</h2>
+        <h2>{service.title}</h2>
         <br />
         <div className="row">
           <div className="col-lg-9">
             <p>
-              { service.description }
+              {service.description}
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export default function ServiceDetail({ params }) {
               </div>
             ))}
 
-      </div>
+        </div>
       </div>
 
 
@@ -146,8 +146,8 @@ export default function ServiceDetail({ params }) {
                   <div className="col-lg-9">
                     <ul>
                       <li>
-                        <span className="category"> { service.category ? service.category.title : ''}</span>
-                        <h4> {service.title }</h4>
+                        <span className="category"> {service.category ? service.category.title : ''}</span>
+                        <h4> {service.title}</h4>
                       </li>
                       {/* <li>
                         <span>Date:</span>
@@ -162,7 +162,7 @@ export default function ServiceDetail({ params }) {
                       </li> */}
                       <li>
                         <span>Contact:</span>
-                        <h6> { service.contact} </h6>
+                        <h6> {service.contact} </h6>
                       </li>
                     </ul>
                     <a href="#">

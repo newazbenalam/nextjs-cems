@@ -134,7 +134,7 @@ export default function Services() {
                                       .split(" ")
                                       .slice(0, 4)
                                       .join(" ")
-                                  : "16 Feb 2036"}
+                                  : "16 Feb 2023"}
                               </p>
                             </td>
                             <td className="align-middle text-center text-sm">
