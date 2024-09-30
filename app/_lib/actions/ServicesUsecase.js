@@ -3,6 +3,7 @@
 // CRUD for Services
 
 import db from '@/app/_lib/db.js';
+import { title } from 'faker/lib/locales/az';
 
 export const GetServices = async () => {
   try {
@@ -27,7 +28,7 @@ export const GetSingleService = async (id) => {
 
     const courses = await db.Services.findUnique({
       where: {
-        id: id
+        id: parseInt(id)
       },
       include: {
         images: true,
@@ -63,7 +64,15 @@ export const UpdateService = async (id, data) => {
       where: {
         id: id
       },
-      data: data
+      data: {
+        title: data.title,
+        description: data.description,
+        status: data.status == "0" ? false : true,
+        details: data.details,
+        relatedServices: data.relatedServices,
+        contact: data.contact,
+
+      }
     });
     return course;
 

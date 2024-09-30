@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { GetServices } from "@/app/_lib/actions/ServicesUsecase";
+import Link from "next/link";
 
 export default function Services() {
   const [services, setServices] = useState([]);
@@ -148,12 +149,11 @@ export default function Services() {
                               </span>
                             </td>
                             <td className="align-middle">
-                              <a
-                                href="#"
+                              <Link href={`/dashboard/services/${service.id}`}
                                 className="text-secondary font-weight-bold text-xs"
                               >
                                 details
-                              </a>
+                              </Link>
                             </td>
                           </tr>
                         ))

@@ -42,6 +42,10 @@ export default function DashboardLayout({ children }) {
           href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
         />
         <Script src='assets/js/material-dashboard.js' async />
+        <Script src="assets/js/core/popper.min.js"/>
+        <Script src="assets/js/core/bootstrap.min.js"/>
+
+        <Script src="assets/js/material-dashboard.min.js"/>
       </head>
       <body className="g-sidenav-show  bg-gray-200">
 
