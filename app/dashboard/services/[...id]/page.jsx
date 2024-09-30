@@ -119,16 +119,28 @@ export default function DashboardService({ params }) {
 
 
                 </div>
-
-                    <div className="col-12 pt-4" style={{width: 250}}>
-                        <label htmlFor="thumbnail">Thumbnail</label>
+                    
+                    <div className="col-12 pt-4" >
+                          <label htmlFor="thumbnail">Thumbnail</label>
+                          <div className="form-group col-12 col-md-6 col-lg-6">
+                          <input
+                          type="text"
+                          className="form-control bg-gray-200 px-2 border border-gray-400"
+                          onChange={(e) => setItem({ ...item, thumbnail: e.target.value }) }
+                          id="thumbnail"
+                          value={item.thumbnail}
+                          
+                          />
+                      </div>
                         <Image
                         src={item.thumbnail}
                         alt={item.title}
                         fluid
-                        className="mb-3 rounded-4"
+                        className="mb-3 rounded-4 mt-3"
+                        style={{width: 250}}
                         />
                     </div>
+
 
                     {/* for images grid view */}
                     <div className="col-12">

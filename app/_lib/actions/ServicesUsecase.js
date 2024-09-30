@@ -71,6 +71,7 @@ export const UpdateService = async (id, data) => {
         details: data.details,
         relatedServices: data.relatedServices,
         contact: data.contact,
+        thumbnail: data.thumbnail,
 
       }
     });
