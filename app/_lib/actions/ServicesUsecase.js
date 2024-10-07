@@ -46,7 +46,16 @@ export const CreateService = async (data) => {
   try {
 
     const course = await db.Services.create({
-      data: data
+      data: {
+        title: data.title,
+        description: data.description,
+        status: data.status == "0" ? false : true,
+        details: data.details,
+        relatedServices: data.relatedServices,
+        contact: data.contact,
+        thumbnail: data.thumbnail,
+
+      }
     });
     return course;
 
