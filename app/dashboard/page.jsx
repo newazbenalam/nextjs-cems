@@ -268,16 +268,16 @@ export default function Dashboard() {
                       <thead>
                         <tr>
                           <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            Companies
+                            username
                           </th>
                           <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                            Members
+                            role
                           </th>
                           <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            Budget
+                            officialmail
                           </th>
                           <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            Completion
+                            phone
                           </th>
                         </tr>
                       </thead>
@@ -373,7 +373,7 @@ export default function Dashboard() {
                                       style={{
                                         width:
                                           parseFloat(course.averageRating) *
-                                            20 +
+                                          20 +
                                           "%",
                                       }}
                                       role="progressbar"

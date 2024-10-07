@@ -1,26 +1,30 @@
 "use client";
 
-import { GetSingleService, UpdateService } from "@/app/_lib/actions/ServicesUsecase";
+import { CreateService } from "@/app/_lib/actions/ServicesUsecase";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 
-export default function DashboardService({ params }) {
+export default function DashboardServiceAdd({ params }) {
     const [item, setItem] = useState({});
     const { id } = params;
 
+    const router = useRouter();
+
     useEffect(() => {
-        const foo = async () => {
-            const res = await GetSingleService(id);
-            setItem(res);
-        };
-        foo();
+        // const foo = async () => {
+        //     const res = await GetSingleService(id);
+        //     setItem(res);
+        // };
+        // foo();
     }, []);
 
     const onHandleChange = async () => {
-        const res = await UpdateService(item.id, item);
+        const res = await CreateService(item);
         console.log(res);
         if (!res.error) {
             window.location.reload();
+            router.back();
         }
     }
 
@@ -167,7 +171,7 @@ export default function DashboardService({ params }) {
                                         className="btn btn-primary shadow-none "
                                         onClick={onHandleChange}
                                     >
-                                        Update
+                                        Publish
                                     </button>
                                 </div>
                             </form>

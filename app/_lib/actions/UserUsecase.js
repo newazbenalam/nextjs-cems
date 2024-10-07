@@ -1,6 +1,7 @@
 "use server";
 
 import db from '@/app/_lib/db.js';
+import { Gender } from '@prisma/client';
 
 export const GetUsers = async () => {
   try {
@@ -54,7 +55,14 @@ export const UpdateUser = async (id, data) => {
 
     const user = await db.Users.update({
       where: { id: parseInt(id) },
-      data: data
+      data: {
+        name: data.name,
+        email: data.email,
+        image: data.image,
+        gender: data.gender,
+        role: data.role,
+
+      }
     });
     return user;
 
@@ -79,7 +87,7 @@ export const DeleteUser = async (id) => {
 }
 
 export const findUserBasic = async (email, pass) => {
-// handle the error if the user is not found
+  // handle the error if the user is not found
   try {
     const user = await db.Users.findFirst({
       where: {
@@ -91,5 +99,20 @@ export const findUserBasic = async (email, pass) => {
   } catch (error) {
     console.error("findUserBasic", error);
     return error;
+  }
+}
+
+// get gender enum
+export const getGender = async () => {
+  // handle the error if the user is not found
+  try {
+
+    const arr = Object.values(Gender);
+    console.log(arr)
+    return arr;
+
+  } catch (error) {
+    console.error("GetGender", error);
+    return [];
   }
 }

@@ -42,10 +42,10 @@ export default function DashboardLayout({ children }) {
           href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
         />
         <Script src='assets/js/material-dashboard.js' async />
-        <Script src="assets/js/core/popper.min.js"/>
-        <Script src="assets/js/core/bootstrap.min.js"/>
+        <Script src="assets/js/core/popper.min.js" />
+        <Script src="assets/js/core/bootstrap.min.js" />
 
-        <Script src="assets/js/material-dashboard.min.js"/>
+        <Script src="assets/js/material-dashboard.min.js" />
       </head>
       <body className="g-sidenav-show  bg-gray-200">
 
@@ -69,6 +69,14 @@ export default function DashboardLayout({ children }) {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className={route === '/dashboard/courses' ? 'bg-purple active nav-link text-white' : 'nav-link text-white'} href={'/dashboard/courses'}>
+                  <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i className="fa fa-book-open opacity-10" />
+                  </div>
+                  <span className="nav-link-text ms-1">Courses</span>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className={route === '/dashboard/users' ? 'bg-purple active nav-link text-white' : 'nav-link text-white'} href={'/dashboard/users'}>
                   <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i className="fa fa-users opacity-10" />
@@ -84,14 +92,14 @@ export default function DashboardLayout({ children }) {
                   <span className="nav-link-text ms-1">Services</span>
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link text-white " href="../pages/billing.html">
                   <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i className="fa fa-money-bill opacity-10"></i>
                   </div>
                   <span className="nav-link-text ms-1">Billing</span>
                 </a>
-              </li>
+              </li> */}
 
             </ul>
           </div>

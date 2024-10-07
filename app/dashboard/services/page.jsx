@@ -32,7 +32,7 @@ export default function Services() {
                     <span className="font-weight-bold ms-1">30 done</span> this month
                   </p> */}
                   </div>
-                  <div className="col-lg-6 col-5 my-auto text-end">
+                  {/* <div className="col-lg-6 col-5 my-auto text-end">
                     <div className="dropdown float-lg-end pe-4">
                       <a
                         className="cursor-pointer"
@@ -72,7 +72,16 @@ export default function Services() {
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
+
+                  <Link
+                    className="col-lg-6 col-5 my-auto text-end"
+                    href={"/dashboard/services/add"}
+                  >
+                    <button className="btn btn-sm btn-primary text-white col-2 float-lg-end">
+                      Add
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="card-body px-0 pb-2">
@@ -81,16 +90,16 @@ export default function Services() {
                     <thead>
                       <tr>
                         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                          Companies
+                          Service
                         </th>
                         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                          Members
+                          Deadline
                         </th>
                         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                          Budget
+                          Price
                         </th>
                         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                          Completion
+                          Average Rating
                         </th>
                         <th className="text-secondary opacity-7"></th>
                       </tr>
@@ -149,7 +158,8 @@ export default function Services() {
                               </span>
                             </td>
                             <td className="align-middle">
-                              <Link href={`/dashboard/services/${service.id}`}
+                              <Link
+                                href={`/dashboard/services/${service.id}`}
                                 className="text-secondary font-weight-bold text-xs"
                               >
                                 details
