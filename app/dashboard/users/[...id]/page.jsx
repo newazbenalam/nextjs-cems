@@ -104,12 +104,12 @@ export default function DashboardUser({ params }) {
                                     <div className="form-group col-12 col-md-6 col-lg-6">
                                         <label htmlFor="dob">Date of Birth</label>
                                         <input
-                                            type="text"
+                                            type="date"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, dob: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, dob: new Date(e.target.value).toISOString() })}
                                             id="dob"
-                                            value={formateDate(item.dob)}
-                                            disabled
+                                            value={String(item.dob).split("T")[0]}
+
                                         />
 
                                     </div>

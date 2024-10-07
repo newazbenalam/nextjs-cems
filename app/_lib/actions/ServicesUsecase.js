@@ -93,7 +93,7 @@ export const UpdateService = async (id, data) => {
 }
 
 
-export const DeleteService = async (id) => {
+export const deleteService = async (id) => {
   try {
 
     const course = await db.Services.delete({

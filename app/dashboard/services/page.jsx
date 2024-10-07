@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
-import { GetServices } from "@/app/_lib/actions/ServicesUsecase";
+import { deleteService, DeleteService, GetServices } from "@/app/_lib/actions/ServicesUsecase";
 import Link from "next/link";
 
 export default function Services() {
@@ -16,6 +16,23 @@ export default function Services() {
 
     getServices();
   }, []);
+
+  // const onHandleChange = async () => {
+  //   const res = await DeleteService(item);
+  //   console.log(res);
+  //   if (!res.error) {
+  //     window.location.reload();
+  //     router.back();
+  //   }
+  // };
+
+  const handleDelete = async (id) => {
+    const res = await deleteService(parseInt(id));
+    if (res) {
+      const dlt = services.filter((service) => service.id !== id);
+      setServices(dlt);
+    }
+  };
 
   return (
     <>
@@ -139,11 +156,11 @@ export default function Services() {
                               <p className="text-secondary text-xs">
                                 {services.createdAt
                                   ? // format datetime to date only
-                                    Date(services.createdAt)
-                                      .split(":")[0]
-                                      .split(" ")
-                                      .slice(0, 4)
-                                      .join(" ")
+                                  Date(services.createdAt)
+                                    .split(":")[0]
+                                    .split(" ")
+                                    .slice(0, 4)
+                                    .join(" ")
                                   : "16 Feb 2023"}
                               </p>
                             </td>
@@ -164,6 +181,15 @@ export default function Services() {
                               >
                                 details
                               </Link>
+                            </td>
+                            <td>
+                              <button
+                                type="button"
+                                className="btn btn-secondary btn-sm shadow-none mt-3 "
+                                onClick={() => handleDelete(service.id)}
+                              >
+                                Delete
+                              </button>
                             </td>
                           </tr>
                         ))

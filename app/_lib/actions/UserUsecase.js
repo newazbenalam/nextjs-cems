@@ -61,7 +61,7 @@ export const UpdateUser = async (id, data) => {
         image: data.image,
         gender: data.gender,
         role: data.role,
-
+        dob: data.dob
       }
     });
     return user;
@@ -72,7 +72,7 @@ export const UpdateUser = async (id, data) => {
   }
 }
 
-export const DeleteUser = async (id) => {
+export const deleteUser = async (id) => {
   try {
 
     const user = await db.Users.delete({
