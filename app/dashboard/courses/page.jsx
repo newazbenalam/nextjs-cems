@@ -143,9 +143,9 @@ export default function Courses() {
                                                                     <h6 className="mb-0 text-sm">
                                                                         {course.title}
                                                                     </h6>
-                                                                    <p className="text-secondary text-xs">
+                                                                    {/* <p className="text-secondary text-xs">
                                                                         {course.description}
-                                                                    </p>
+                                                                    </p> */}
                                                                 </div>
                                                             </div>
                                                         </td>
