@@ -75,7 +75,7 @@ export const UpdateCourse = async (id, data) => {
 }
 
 
-export const DeleteCourse = async (id) => {
+export const deleteCourse = async (id) => {
   try {
 
     const course = await db.Courses.delete({
