@@ -8,7 +8,7 @@ import { Image } from 'react-bootstrap';
 
 export default function CoursesList() {
     const [services, setServices] = React.useState([]);
-     
+
     useEffect(() => {
         const getData = async () => {
             const res = await GetServices();
@@ -58,8 +58,8 @@ export default function CoursesList() {
                         </li>
                     </ul> */}
 
-                    
-                    <div className="row event_box">
+
+                    {/* <div className="row event_box">
 
                         {
                         // spinner 
@@ -87,7 +87,40 @@ export default function CoursesList() {
 
 
 
+                    </div> */}
+
+                    <div className="row event_box">
+                        {services.map((service) => (
+                            <div key={service.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+                                <Link href={`/services/${service.id}`} >
+                                    <div className="events_item" >
+                                        <div className="thumb">
+                                            <div className="col-lg-4 col-md-4">
+                                                <a href="#">
+                                                    <Image src={`${service.thumbnail}`} alt="" height={140} width={60} />
+                                                </a>
+                                            </div>
+
+                                            {/* <span className="category">{course.category.title}</span> */}
+                                            {/* <span className="price">
+                                                <h6>
+                                                    <em>$</em>{service.price}
+                                                </h6>
+                                            </span> */}
+                                        </div>
+                                        <div className="down-content">
+                                            <span className="author">{service.description}</span>
+                                            <h4>{service.title}</h4>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+
+                        ))}
+
                     </div>
+
+
                 </div>
             </section>
         </>

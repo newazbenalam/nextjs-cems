@@ -32,7 +32,7 @@ export default function ServiceDetail({ params }) {
         <div className="row">
           <div className="col-lg-9">
             <p>
-              {service.description}
+              {service.details}
             </p>
           </div>
 

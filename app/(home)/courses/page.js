@@ -90,8 +90,8 @@ export default function CoursesList() {
                         height={254}
                         style={{ objectFit: "cover" }}
                         src={course.image}
-                        alt=""/>
-                      <span className="category">{course.category.title}</span>
+                        alt="" />
+                      {/* <span className="category">{course.category.title}</span> */}
                       <span className="price">
                         <h6>
                           <em>$</em>{course.price}
