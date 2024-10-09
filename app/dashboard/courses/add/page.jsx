@@ -105,6 +105,18 @@ export default function DashboardCourseAdd({ params }) {
                                         ></input>
                                     </div>
 
+                                    <div className="form-group col-12 col-md-6 col-lg-6">
+                                        <label htmlFor="instructor">Instructor</label>
+                                        <input
+                                            type="Users"
+                                            className="form-control bg-gray-200 px-2 border border-gray-400"
+                                            onChange={(e) => setItem({ ...item, instructorId: e.target.value })}
+                                            id="instructorId"
+                                            value={item.instructorId}
+
+                                        />
+                                    </div>
+
 
 
 

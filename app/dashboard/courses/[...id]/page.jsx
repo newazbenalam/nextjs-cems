@@ -10,14 +10,14 @@ export default function DashboardCourse({ params }) {
 
     useEffect(() => {
         const foo = async () => {
-            const res = await GetSingleCourse(id);
+            const res = await GetSingleCourse(parseInt(id));
             setItem(res);
         };
         foo();
     }, []);
 
     const onHandleChange = async () => {
-        const res = await UpdateCourse(item.id, item);
+        const res = await UpdateCourse(parseInt(item.id), item);
         console.log(res);
         if (!res.error) {
             window.location.reload();
@@ -29,7 +29,7 @@ export default function DashboardCourse({ params }) {
             <div className="container-fluid card mx-2">
                 <div className="">
                     <div className="card-header row ">
-                        <h6 className="card-title  text-m col-6">{"Service's details"}</h6>
+                        <h6 className="card-title  text-m col-6">{"Course's details"}</h6>
                         <p className="text-secondary text-xs col-6 text-end pe-4 pt-1">
                             {item.createdAt
                                 ? // format datetime to date only
@@ -92,6 +92,7 @@ export default function DashboardCourse({ params }) {
                                     <div className="form-group col-12 col-md-6 col-lg-6">
                                         <label htmlFor="code">Code</label>
                                         <input
+                                            type="text"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
                                             onChange={(e) => setItem({ ...item, code: e.target.value })}
                                             id="details"
@@ -99,6 +100,19 @@ export default function DashboardCourse({ params }) {
                                             value={item.code}
 
                                         ></input>
+                                    </div>
+
+
+                                    <div className="form-group col-12 col-md-6 col-lg-6">
+                                        <label htmlFor="instructor">Instructor</label>
+                                        <input
+                                            type="Users"
+                                            className="form-control bg-gray-200 px-2 border border-gray-400"
+                                            onChange={(e) => setItem({ ...item, instructor: e.target.value })}
+                                            id="instructor"
+                                            value={item.instructor}
+
+                                        />
                                     </div>
 
 

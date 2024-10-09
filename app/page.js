@@ -50,7 +50,7 @@ export default function Home() {
             <div className="col-12">
               <nav className="main-nav">
                 <Link href={"/"} className="logo">
-                  <h1>Scholar</h1>
+                  <h1 text-sm>IT Bangla LTD.</h1>
                 </Link>
 
                 <div className="search-input">
@@ -85,14 +85,14 @@ export default function Home() {
                 <div className="item item-1">
                   <div className="header-text">
                     <span className="category">Our Courses</span>
-                    <h2>With Scholar Teachers, Everything Is Easier</h2>
-                    <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                    <h2>With IT Bangla LTD. Teachers, Everything Is Easier</h2>
+                    <p>IT Bangla LTD. is a technology company specializing in software development and digital solutions, focusing on innovative software applications, data analysis, and enhancing business growth through technology-driven services.</p>
                     <div className="buttons">
                       <div className="main-button">
                         <a href="#">Request Demo</a>
                       </div>
                       <div className="icon-button">
-                        <a href="#"><i className="fa fa-play"></i> Whats Scholar?</a>
+                        <a href="#"><i className="fa fa-play"></i> What's IT Bangla LTD.?</a>
                       </div>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ export default function Home() {
                   <div className="header-text">
                     <span className="category">Best Result</span>
                     <h2>Get the best result out of your effort</h2>
-                    <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
+                    {/* <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p> */}
                     <div className="buttons">
                       <div className="main-button">
                         <a href="#">Request Demo</a>
@@ -116,7 +116,7 @@ export default function Home() {
                   <div className="header-text">
                     <span className="category">Online Learning</span>
                     <h2>Online Learning helps you save the time</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
+                    <p>IT Bangla LTD. is a technology company specializing in software development and digital solutions, focusing on innovative software applications, data analysis, and enhancing business growth through technology-driven services.</p>
                     <div className="buttons">
                       <div className="main-button">
                         <a href="#">Request Demo</a>
@@ -139,11 +139,11 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <Image src="assets/images/service-01.png" alt="online degrees" />
+                  <Image src="assets\images\onlineDegree.png" alt="online degrees" />
                 </div>
                 <div className="main-content">
                   <h4>Online Degrees</h4>
-                  <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
+                  <p>IT Bangla LTD provides recognized online degrees and international certifications to enhance your professional qualifications and skills.</p>
                   <div className="main-button">
                     <a href="#">Read More</a>
                   </div>
@@ -153,11 +153,11 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <Image src="assets/images/service-02.png" alt="short courses" />
+                  <Image src="assets\images\course.png" alt="short courses" />
                 </div>
                 <div className="main-content">
                   <h4>Short Courses</h4>
-                  <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
+                  <p>IT Bangla LTD offers short courses providing hands-on training in various IT fields, equipping students with essential skills for career advancement.</p>
                   <div className="main-button">
                     <a href="#">Read More</a>
                   </div>
@@ -167,11 +167,11 @@ export default function Home() {
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
-                  <Image src="assets/images/service-03.png" alt="web experts" />
+                  <Image src="assets\images\softwareSolutions.png" alt="web experts" />
                 </div>
                 <div className="main-content">
-                  <h4>Web Experts</h4>
-                  <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
+                  <h4>Software solutions</h4>
+                  <p>We provide tailored software solutions to educational institutions and organizations, enhancing efficiency and productivity across operations.</p>
                   <div className="main-button">
                     <a href="#">Read More</a>
                   </div>
@@ -195,7 +195,7 @@ export default function Home() {
                   </h2>
                   <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                      Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesnt eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                      IT Bangla Ltd, a <strong>leading</strong> provider of IT education, international testing, and software solutions in Dhaka, Bangladesh, boasts over 20 years of expertise. Since its inception, the company has experienced consistent growth, with a notable twelve percent annual increase in enrollment.
                     </div>
                   </div>
                 </div>
@@ -207,20 +207,20 @@ export default function Home() {
                   </h2>
                   <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                      Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesnt eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+
                     </div>
                   </div>
                 </div>
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Why SCHOLAR is the best?
+                      Why IT Bangla LTD. is the best?
                     </button>
                   </h2>
                   <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
+                    {/* <div className="accordion-body">
                       There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="accordion-item">
@@ -230,9 +230,9 @@ export default function Home() {
                     </button>
                   </h2>
                   <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
+                    {/* <div className="accordion-body">
                       You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default function Home() {
               <div className="section-heading">
                 <h6>About Us</h6>
                 <h2>What make us the best academy online?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+                <p>What makes us the best academy online is our commitment to providing high-quality education through experienced instructors, interactive learning platforms, and personalized support. We offer a diverse range of courses, ensuring flexibility, accessibility, and real-world skills that empower students to succeed.</p>
                 <div className="main-button">
                   <a href="#">Discover More</a>
                 </div>
@@ -281,10 +281,13 @@ export default function Home() {
                 <Link href={`/courses/${course.id}`} >
                   <div className="events_item">
                     <div className="thumb">
-                      <a href="#">
-                        <Image src="assets/images/course-01.jpg" alt="" />
-                      </a>
-                      <span className="category">{course.category.title}</span>
+                      <div className="col-lg-4 col-md-4">
+                        <a href="#">
+                          <Image src={`${course.image}`} alt="" height={140} width={60} />
+                        </a>
+                      </div>
+
+                      {/* <span className="category">{course.category.title}</span> */}
                       <span className="price">
                         <h6>
                           <em>$</em>{course.price}
@@ -349,7 +352,7 @@ export default function Home() {
               <div className="team-member">
                 <div className="main-content">
                   <Image src="assets/images/member-01.jpg" alt="" />
-                  <span className="category">UX Teacher</span>
+                  <span className="category">Python Instructor</span>
                   <h4>Sophia Rose</h4>
                   <ul className="social-icons">
                     <li><a href="#"><i className="fab fa-facebook"></i></a></li>
@@ -363,7 +366,7 @@ export default function Home() {
               <div className="team-member">
                 <div className="main-content">
                   <Image src="assets/images/member-02.jpg" alt="" />
-                  <span className="category">Graphic Teacher</span>
+                  <span className="category">Graphics Designing Instructor</span>
                   <h4>Cindy Walker</h4>
                   <ul className="social-icons">
                     <li><a href="#"><i className="fab fa-facebook"></i></a></li>
@@ -377,7 +380,7 @@ export default function Home() {
               <div className="team-member">
                 <div className="main-content">
                   <Image src="assets/images/member-03.jpg" alt="" />
-                  <span className="category">Full Stack Master</span>
+                  <span className="category">Web Development Instructor</span>
                   <h4>David Hutson</h4>
                   <ul className="social-icons">
                     <li><a href="#"><i className="fab fa-facebook"></i></a></li>
@@ -391,7 +394,7 @@ export default function Home() {
               <div className="team-member">
                 <div className="main-content">
                   <Image src="assets/images/member-04.jpg" alt="" />
-                  <span className="category">Digital Animator</span>
+                  <span className="category">Animation Instructor</span>
                   <h4>Stella Blair</h4>
                   <ul className="social-icons">
                     <li><a href="#"><i className="fab fa-facebook"></i></a></li>
@@ -410,37 +413,37 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-7">
               <div className="owl-carousel owl-testimonials">
-                <div className="item">
+                {/* <div className="item">
                   <p>“Please tell your friends or collegues about TemplateMo website. Anyone can access the website to download free templates. Thank you for visiting.”</p>
                   <div className="author">
                     <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">Full Stack Master</span>
                     <h4>Claude David</h4>
                   </div>
-                </div>
-                <div className="item">
+                </div> */}
+                {/* <div className="item">
                   <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.”</p>
                   <div className="author">
                     <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">UI Expert</span>
                     <h4>Thomas Jefferson</h4>
                   </div>
-                </div>
-                <div className="item">
-                  <p>“Scholar is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
+                </div> */}
+                {/* <div className="item">
+                  <p>“IT Bangla LTD. is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
                   <div className="author">
                     <Image src="assets/images/testimonial-author.jpg" alt="" />
                     <span className="category">Digital Animator</span>
                     <h4>Stella Blair</h4>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-lg-5 align-self-center">
               <div className="section-heading">
                 <h6>TESTIMONIALS</h6>
                 <h2>What they say about us?</h2>
-                <p>You can search free CSS templates on Google using different keywords such as templatemo portfolio, templatemo gallery, templatemo blue color, etc.</p>
+                <p>"Working with this company has been an exceptional experience. Their expertise, attention to detail, and innovative solutions exceeded our expectations. The team is highly professional and consistently delivered on time. They've played a key role in enhancing our business operations."-Hasan Mahmud</p>
               </div>
             </div>
           </div>
@@ -461,26 +464,26 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <Image src="assets/images/event-01.jpg" alt="" />
+                      <Image src="assets/images/webDesign.png" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">
                     <ul>
                       <li>
                         <span className="category">Web Design</span>
-                        <h4>UI Best Practices</h4>
+                        <h4>Learn from the best in this workshop</h4>
                       </li>
                       <li>
                         <span>Date:</span>
-                        <h6>16 Feb 2036</h6>
+                        <h6>23 Juky 2024</h6>
                       </li>
                       <li>
                         <span>Duration:</span>
-                        <h6>22 Hours</h6>
+                        <h6>3 Hours</h6>
                       </li>
                       <li>
                         <span>Price:</span>
-                        <h6>$120</h6>
+                        <h6>$20</h6>
                       </li>
                     </ul>
                     <a href="#"><i className="fa fa-angle-right"></i></a>
@@ -493,26 +496,26 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <Image src="assets/images/event-02.jpg" alt="" />
+                      <Image src="assets\images\cyberSecurity.jpg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">
                     <ul>
                       <li>
-                        <span className="category">Front End</span>
-                        <h4>New Design Trend</h4>
+                        <span className="category">Cyber Secuirty Awareness</span>
+                        <h4>Know and Be Safe</h4>
                       </li>
                       <li>
                         <span>Date:</span>
-                        <h6>24 Feb 2036</h6>
+                        <h6>18 July 2024</h6>
                       </li>
                       <li>
                         <span>Duration:</span>
-                        <h6>30 Hours</h6>
+                        <h6>3 Hours</h6>
                       </li>
                       <li>
                         <span>Price:</span>
-                        <h6>$320</h6>
+                        <h6>free</h6>
                       </li>
                     </ul>
                     <a href="#"><i className="fa fa-angle-right"></i></a>
@@ -525,26 +528,26 @@ export default function Home() {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="image">
-                      <Image src="assets/images/event-03.jpg" alt="" />
+                      <Image src="assets/images/github.avif" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-9">
                     <ul>
                       <li>
-                        <span className="category">Full Stack</span>
-                        <h4>Web Programming</h4>
+                        <span className="category">GitHUB</span>
+                        <h4>Learn Version Control</h4>
                       </li>
                       <li>
                         <span>Date:</span>
-                        <h6>12 Mar 2036</h6>
+                        <h6>12 July 2024</h6>
                       </li>
                       <li>
                         <span>Duration:</span>
-                        <h6>48 Hours</h6>
+                        <h6>2 Hours</h6>
                       </li>
                       <li>
                         <span>Price:</span>
-                        <h6>$440</h6>
+                        <h6>free</h6>
                       </li>
                     </ul>
                     <a href="#"><i className="fa fa-angle-right"></i></a>
@@ -562,12 +565,12 @@ export default function Home() {
             <div className="col-lg-6  align-self-center">
               <div className="section-heading">
                 <h6>Contact Us</h6>
-                <h2>Feel free to contact us anytime</h2>
-                <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+                <h2>Feel free to contact </h2>
+                <p>Thank you for visiting our website! We're excited to assist you with our services and look forward to connecting soon.</p>
                 <div className="special-offer">
-                  <span className="offer">off<br /><em>50%</em></span>
-                  <h6>Valide: <em>24 April 2036</em></h6>
-                  <h4>Special Offer <em>50%</em> OFF!</h4>
+                  <span className="offer">off<br /><em>20%</em></span>
+                  <h6>Valid: <em>24 August 2024</em></h6>
+                  <h4>Special Offer <em>20</em> OFF!</h4>
                   <a href="#"><i className="fa fa-angle-right"></i></a>
                 </div>
               </div>
@@ -607,7 +610,7 @@ export default function Home() {
       <footer>
         <div className="container">
           <div className="col-lg-12">
-            <p>Copyright © 2036 Scholar Organization. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a> Distribution: <a href="https://themewagon.com" rel="nofollow" target="_blank">ThemeWagon</a></p>
+            <p>Copyright © 2024 IT Bangla LTD. Organization. All rights reserved. &nbsp;&nbsp;&nbsp; </p>
           </div>
         </div>
       </footer>
