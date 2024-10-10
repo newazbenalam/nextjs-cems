@@ -5,10 +5,14 @@ import Link from "next/link";
 import "@/app/globals.css";
 import { GetCourses } from "./_lib/actions/CoursesUsecase";
 import { Image } from "react-bootstrap";
+import { getInstructor } from "./_lib/actions/UserUsecase";
+import ServicesGridView from "./(components)/ServicesGridView";
+import { GetServices } from "./_lib/actions/ServicesUsecase";
 
 export default function Home() {
 
-
+  const [services, setServices] = React.useState([]);
+  const [users, setUsers] = React.useState([]);
   const [courses, setCourses] = React.useState([]);
 
   useEffect(() => {
@@ -31,8 +35,10 @@ export default function Home() {
     const getData = async () => {
       const res = await GetCourses();
       setCourses(res);
+      setUsers(await getInstructor());
+      setServices(await GetServices());
       console.log(res);
-    }
+    };
 
     getData();
 
@@ -50,7 +56,7 @@ export default function Home() {
             <div className="col-12">
               <nav className="main-nav">
                 <Link href={"/"} className="logo">
-                  <h1 text-sm>IT Bangla LTD.</h1>
+                  <h1 className="text-sm">IT Bangla LTD.</h1>
                 </Link>
 
                 <div className="search-input">
@@ -63,7 +69,7 @@ export default function Home() {
                   <li className="scroll-to-section"><a href="#top" className="active">Home</a></li>
                   <li className="scroll-to-section"><a href="/services">Services</a></li>
                   <li className="scroll-to-section"><Link href={"/courses"}>Courses</Link></li>
-                  <li className="scroll-to-section"><a href="#team">Team</a></li>
+                  <li className="scroll-to-section"><Link href={"/team"}>Team</Link></li>
                   <li className="scroll-to-section"><a href="#events">Events</a></li>
                   <li className="scroll-to-section"><a href="#contact">Contact</a></li>
                   <li className="scroll-to-section"><Link href={"/signup"}>Register Now!</Link></li>
@@ -92,7 +98,7 @@ export default function Home() {
                         <a href="#">Request Demo</a>
                       </div>
                       <div className="icon-button">
-                        <a href="#"><i className="fa fa-play"></i> What's IT Bangla LTD.?</a>
+                        <a href="#"><i className="fa fa-play"></i> {"What's IT Bangla LTD.?"}</a>
                       </div>
                     </div>
                   </div>
@@ -135,7 +141,7 @@ export default function Home() {
 
       <div className="services section" id="services">
         <div className="container">
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="service-item">
                 <div className="icon">
@@ -178,6 +184,27 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div> */}
+          <div className="row event_box">
+            {services && services.slice(0, 3).map((service) => (
+              <div key={service.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+                <Link href={`/services/${service.id}`} >
+                  <div className="events_item">
+                    <div className="thumb">
+                      <div style={{ height: 220 }}>
+                        <a href="#">
+                          <Image src={`${service.thumbnail}`} style={{ objectFit: 'cover' }} height={220} alt="" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="down-content">
+                      <span className="author">{service.description}</span>
+                      <h4>{service.title}</h4>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -276,7 +303,7 @@ export default function Home() {
             </li>
           </ul>
           <div className="row event_box">
-            {courses.map((course) => (
+            {courses.slice(0, 6).map((course) => (
               <div key={course.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
                 <Link href={`/courses/${course.id}`} >
                   <div className="events_item">
@@ -347,63 +374,29 @@ export default function Home() {
 
       <div className="team section" id="team">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6">
-              <div className="team-member">
-                <div className="main-content">
-                  <Image src="assets/images/member-01.jpg" alt="" />
-                  <span className="category">Python Instructor</span>
-                  <h4>Sophia Rose</h4>
-                  <ul className="social-icons">
-                    <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                  </ul>
+          <div className="row d-flex justify-content-center">
+
+            {users.slice(0, 4).map((user, index) =>
+            (
+              <div key={index} className="col-lg-3 col-md-6">
+                <div className="team-member">
+                  <div className="main-content">
+                    <Image src={user.image} alt="" />
+                    <span className="category">{user.courses[0]?.category.title ? `${user.courses[0].category.title} Instructor` : "General Instructor"}</span>
+                    <h4>{user.name}</h4>
+                    <ul className="social-icons">
+                      <li><a href="#"><i className="fab fa-facebook"></i></a></li>
+                      <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="team-member">
-                <div className="main-content">
-                  <Image src="assets/images/member-02.jpg" alt="" />
-                  <span className="category">Graphics Designing Instructor</span>
-                  <h4>Cindy Walker</h4>
-                  <ul className="social-icons">
-                    <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="team-member">
-                <div className="main-content">
-                  <Image src="assets/images/member-03.jpg" alt="" />
-                  <span className="category">Web Development Instructor</span>
-                  <h4>David Hutson</h4>
-                  <ul className="social-icons">
-                    <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="team-member">
-                <div className="main-content">
-                  <Image src="assets/images/member-04.jpg" alt="" />
-                  <span className="category">Animation Instructor</span>
-                  <h4>Stella Blair</h4>
-                  <ul className="social-icons">
-                    <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            )
+            )}
+
+
+
           </div>
         </div>
       </div>
@@ -443,7 +436,7 @@ export default function Home() {
               <div className="section-heading">
                 <h6>TESTIMONIALS</h6>
                 <h2>What they say about us?</h2>
-                <p>"Working with this company has been an exceptional experience. Their expertise, attention to detail, and innovative solutions exceeded our expectations. The team is highly professional and consistently delivered on time. They've played a key role in enhancing our business operations."-Hasan Mahmud</p>
+                <p>{`"Working with this company has been an exceptional experience. Their expertise, attention to detail, and innovative solutions exceeded our expectations. The team is highly professional and consistently delivered on time. They've played a key role in enhancing our business operations."-Hasan Mahmud`}</p>
               </div>
             </div>
           </div>
@@ -566,7 +559,7 @@ export default function Home() {
               <div className="section-heading">
                 <h6>Contact Us</h6>
                 <h2>Feel free to contact </h2>
-                <p>Thank you for visiting our website! We're excited to assist you with our services and look forward to connecting soon.</p>
+                <p>{"Thank you for visiting our website! We're excited to assist you with our services and look forward to connecting soon."}</p>
                 <div className="special-offer">
                   <span className="offer">off<br /><em>20%</em></span>
                   <h6>Valid: <em>24 August 2024</em></h6>

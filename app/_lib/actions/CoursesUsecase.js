@@ -21,7 +21,7 @@ export const GetCourses = async () => {
     console.error("GetCourses", error);
     return [];
   }
-}
+};
 
 export const GetSingleCourse = async (id) => {
   try {
@@ -41,7 +41,7 @@ export const GetSingleCourse = async (id) => {
     console.error("GetCourses", error);
     return [];
   }
-}
+};
 
 export const CreateCourse = async (data) => {
   try {
@@ -55,16 +55,37 @@ export const CreateCourse = async (data) => {
     console.error("CreateCourse", error);
     return [];
   }
-}
+};
 
 export const UpdateCourse = async (id, data) => {
+  console.log("updatecourse id: " + id);
   try {
 
     const course = await db.Courses.update({
       where: {
         id: id
       },
-      data: data
+      data: {
+        instructorId: data.instructorId,
+        title: data.title,
+        description: data.description,
+        price: parseFloat(data.price),
+        discount: parseFloat(data.discount),
+        code: data.code,
+        categoryId: data.categoryId,
+        image: data.image,
+        credit: parseFloat(data.credit),
+        numberOfClasses: parseInt(data.numberOfClasses),
+        numebrOfClass: parseInt(data.numebrOfClass),
+        availableSeats: parseInt(data.availableSeats),
+        numberOfTests: data.numberOfTests,
+        testDescription: data.testDescription,
+        status: data.status,
+        deadline: data.deadline,
+        classDuration: data.classDuration,
+        courseDuration: parseInt(data.courseDuration),
+
+      }
     });
     return course;
 
@@ -72,7 +93,7 @@ export const UpdateCourse = async (id, data) => {
     console.error("UpdateCourse", error);
     return [];
   }
-}
+};
 
 
 export const deleteCourse = async (id) => {

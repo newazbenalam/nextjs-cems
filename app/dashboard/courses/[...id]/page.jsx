@@ -1,19 +1,23 @@
 "use client";
 
 import { GetSingleCourse, UpdateCourse } from "@/app/_lib/actions/CoursesUsecase";
+import { getInstructor } from "@/app/_lib/actions/UserUsecase";
 import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 
 export default function DashboardCourse({ params }) {
     const [item, setItem] = useState({});
+    const [instructors, setInstructors] = useState([]);
     const { id } = params;
 
     useEffect(() => {
         const foo = async () => {
             const res = await GetSingleCourse(parseInt(id));
             setItem(res);
+            setInstructors(await getInstructor());
         };
         foo();
+
     }, []);
 
     const onHandleChange = async () => {
@@ -22,7 +26,7 @@ export default function DashboardCourse({ params }) {
         if (!res.error) {
             window.location.reload();
         }
-    }
+    };
 
     return (
         <main>
@@ -103,16 +107,22 @@ export default function DashboardCourse({ params }) {
                                     </div>
 
 
+                                    {/* dropdown for instructor */}
                                     <div className="form-group col-12 col-md-6 col-lg-6">
                                         <label htmlFor="instructor">Instructor</label>
-                                        <input
-                                            type="Users"
+                                        <select
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, instructor: e.target.value })}
-                                            id="instructor"
-                                            value={item.instructor}
+                                            onChange={(e) => setItem({ ...item, instructorId: parseInt(e.target.value) })}
+                                            id="instructorId"
+                                            value={item.instructorId}
+                                        >
+                                            {instructors && instructors.map((instru) => (
+                                                <option key={instru.id} value={instru.id} >{instru.name}</option>
 
-                                        />
+                                            ))
+
+                                            }
+                                        </select>
                                     </div>
 
 
@@ -123,7 +133,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, price: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, price: parseFloat(e.target.value) })}
                                             id="price"
                                             value={item.price}
 
@@ -134,7 +144,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, discount: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, discount: parseFloat(e.target.value) })}
                                             id="discount"
                                             value={item.discount}
 
@@ -145,7 +155,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, courseDuration: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, courseDuration: parseInt(e.target.value) })}
                                             id="courseDuration"
                                             value={item.courseDuration}
 
@@ -156,7 +166,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, classDuration: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, classDuration: parseInt(e.target.value) })}
                                             id="classDuration"
                                             value={item.classDuration}
 
@@ -167,7 +177,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, credit: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, credit: parseFloat(e.target.value) })}
                                             id="credit"
                                             value={item.credit}
 
@@ -178,7 +188,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, numberOfClasses: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, numberOfClasses: parseInt(e.target.value) })}
                                             id="numberOfClasses"
                                             value={item.numberOfClasses}
 
@@ -189,7 +199,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, numebrOfClass: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, numebrOfClass: parseInt(e.target.value) })}
                                             id="numebrOfClass"
                                             value={item.numebrOfClass}
 
@@ -200,7 +210,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, availableSeats: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, availableSeats: parseInt(e.target.value) })}
                                             id="availableSeats"
                                             value={item.availableSeats}
 
@@ -211,7 +221,7 @@ export default function DashboardCourse({ params }) {
                                         <input
                                             type="number"
                                             className="form-control bg-gray-200 px-2 border border-gray-400"
-                                            onChange={(e) => setItem({ ...item, numberOfTests: e.target.value })}
+                                            onChange={(e) => setItem({ ...item, numberOfTests: parseInt(e.target.value) })}
                                             id=" numberOfTests"
                                             value={item.numberOfTests}
 

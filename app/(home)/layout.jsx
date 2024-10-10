@@ -13,12 +13,12 @@ import { usePathname } from "next/navigation";
 // import "../../public/assets/css/fontawesome.css";
 
 export default function CoursesLayout({ children }) {
-  const [route, setRoute] = React.useState('')
-  const pathname = usePathname()
+  const [route, setRoute] = React.useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     setRoute(pathname);
-  }, [pathname])
+  }, [pathname]);
 
   return (
     <html lang="en">
@@ -40,7 +40,7 @@ export default function CoursesLayout({ children }) {
               <div className="col-12">
                 <nav className="main-nav">
                   <Link href={"/"} className="logo">
-                    <h1>Scholar</h1>
+                    <h1 className="text-sm">IT Bangla LTD.</h1>
                   </Link>
 
                   <div className="search-input">
@@ -68,7 +68,7 @@ export default function CoursesLayout({ children }) {
                       <Link className={route === '/courses' ? 'active' : ''} href="/courses">Courses</Link>
                     </li>
                     <li className='scroll-to-section'>
-                      <a href="#team">Team</a>
+                      <Link className={route === '/team' ? 'active' : ''} href="/team">Team</Link>
                     </li>
                     <li className="scroll-to-section">
                       <a href="#events">Events</a>

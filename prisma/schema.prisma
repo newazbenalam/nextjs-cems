@@ -15,7 +15,7 @@ datasource db {
 
 enum Gender {
   Male
-  Femalw
+  Female
   Other
 }
 
@@ -72,7 +72,7 @@ model Category{
 model Courses{
   id       Int      @id @default(autoincrement())
   title     String?   @db.VarChar(50)
-  description String? @db.VarChar(255)
+  description String? @db.VarChar(1000)
   price    Float    @default(0)
   discount Float?    @default(0)
   code     String?   @unique @db.VarChar(10)
@@ -115,7 +115,7 @@ model CourseStructure{
   id       Int      @id @default(autoincrement())
   name    String?   @db.VarChar(255)
   subtitle     String?   @db.VarChar(50)
-  description String? @db.VarChar(255)
+  description String? @db.VarChar(1000)
   feature   String? @db.Text
     
   createdAt DateTime @default(now())
@@ -173,11 +173,11 @@ model Rating{
 model Services{
   id       Int      @id @default(autoincrement())
   title     String?   @db.VarChar(50)
-  description String? @db.VarChar(255)
+  description String? @db.VarChar(1000)
   status   Boolean  @default(true)
   thumbnail     String?  @db.VarChar(255)
 
-  details String? @db.Text
+  details String? @db.VarChar(2000)
   relatedServices String? @db.Text
   contact String? @db.Text @default("")
 

@@ -5,8 +5,9 @@ import { GetServices } from '@/app/_lib/actions/ServicesUsecase';
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { Image } from 'react-bootstrap';
+import ServicesGridView from '../../(components)/ServicesGridView';
 
-export default function CoursesList() {
+export default function ServicesList() {
     const [services, setServices] = React.useState([]);
 
     useEffect(() => {
@@ -14,7 +15,7 @@ export default function CoursesList() {
             const res = await GetServices();
             setServices(res);
             console.log(res);
-        }
+        };
 
         getData();
 
@@ -89,36 +90,7 @@ export default function CoursesList() {
 
                     </div> */}
 
-                    <div className="row event_box">
-                        {services.map((service) => (
-                            <div key={service.id} className="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-                                <Link href={`/services/${service.id}`} >
-                                    <div className="events_item" >
-                                        <div className="thumb">
-                                            <div className="col-lg-4 col-md-4">
-                                                <a href="#">
-                                                    <Image src={`${service.thumbnail}`} alt="" height={140} width={60} />
-                                                </a>
-                                            </div>
-
-                                            {/* <span className="category">{course.category.title}</span> */}
-                                            {/* <span className="price">
-                                                <h6>
-                                                    <em>$</em>{service.price}
-                                                </h6>
-                                            </span> */}
-                                        </div>
-                                        <div className="down-content">
-                                            <span className="author">{service.description}</span>
-                                            <h4>{service.title}</h4>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-
-                        ))}
-
-                    </div>
+                    <ServicesGridView services={services} />
 
 
                 </div>
