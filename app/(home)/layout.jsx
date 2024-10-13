@@ -70,9 +70,10 @@ export default function CoursesLayout({ children }) {
                     <li className='scroll-to-section'>
                       <Link className={route === '/team' ? 'active' : ''} href="/team">Team</Link>
                     </li>
-                    <li className="scroll-to-section">
-                      <a href="#events">Events</a>
+                    <li className='scroll-to-section'>
+                      <Link className={route === '/event' ? 'active' : ''} href="/event">Events</Link>
                     </li>
+
                     <li className="scroll-to-section">
                       <Link href={"/signup"}>Register Now!</Link>
                     </li>

@@ -60,7 +60,7 @@ model Users {
 model Category{
   id       Int      @id @default(autoincrement())
   title     String   @db.VarChar(50)
-  description String @db.VarChar(255)
+  description String @db.VarChar(2000)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
 
@@ -72,7 +72,7 @@ model Category{
 model Courses{
   id       Int      @id @default(autoincrement())
   title     String?   @db.VarChar(50)
-  description String? @db.VarChar(1000)
+  description String? @db.VarChar(2000)
   price    Float    @default(0)
   discount Float?    @default(0)
   code     String?   @unique @db.VarChar(10)
@@ -95,11 +95,11 @@ model Courses{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
 
-  instructor  Users @relation(fields: [instructorId], references: [id])
-  instructorId Int
+  instructor  Users? @relation(fields: [instructorId], references: [id])
+  instructorId Int?
 
-  category  Category @relation(fields: [categoryId], references: [id])
-  categoryId Int
+  category  Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
 
   courseStructure CourseStructure? @relation(fields: [courseStructureId], references: [id])
   courseStructureId Int?
@@ -115,7 +115,7 @@ model CourseStructure{
   id       Int      @id @default(autoincrement())
   name    String?   @db.VarChar(255)
   subtitle     String?   @db.VarChar(50)
-  description String? @db.VarChar(1000)
+  description String? @db.VarChar(2000)
   feature   String? @db.Text
     
   createdAt DateTime @default(now())
@@ -127,7 +127,7 @@ model CourseStructure{
 model CourseFeatures{
   id       Int      @id @default(autoincrement())
   title     String?   @db.VarChar(50)
-  description String? @db.VarChar(255)
+  description String? @db.VarChar(1000)
     
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
@@ -173,7 +173,7 @@ model Rating{
 model Services{
   id       Int      @id @default(autoincrement())
   title     String?   @db.VarChar(50)
-  description String? @db.VarChar(1000)
+  description String? @db.VarChar(2000)
   status   Boolean  @default(true)
   thumbnail     String?  @db.VarChar(255)
 
@@ -197,4 +197,16 @@ model Images{
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
+}
+
+model Events{
+  id       Int      @id @default(autoincrement())
+  imageUrl     String  @db.VarChar(255)
+    title     String   @db.VarChar(50)
+     description String? @db.VarChar(2000)
+     location String @db.VarChar(50)
+     heldAt DateTime @default(now())
+     duration Float @default(0)
+     price Float @default(0)
+
 }

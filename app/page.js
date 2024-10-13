@@ -81,9 +81,9 @@ export default function Home() {
                   <li className="scroll-to-section">
                     <Link href={"/team"}>Team</Link>
                   </li>
-                  <li className="scroll-to-section">
+                  {/* <li className="scroll-to-section">
                     <Link href={"/event"}>Events</Link>
-                  </li>
+                  </li> */}
                   <li className="scroll-to-section">
                     <a href="#contact">Contact</a>
                   </li>
@@ -446,7 +446,7 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="down-content">
-                      <span className="author">{course.instructor.name}</span>
+                      <span className="author">{course.instructor?.name}</span>
                       <h4>{course.title}</h4>
                     </div>
                   </div>
@@ -511,7 +511,7 @@ export default function Home() {
                         ? `${user.courses[0].category.title} Instructor`
                         : "General Instructor"}
                     </span>
-                    <h4>{user.name}</h4>
+                    <h4>{user?.name}</h4>
                     <ul className="social-icons">
                       <li>
                         <a href="#">
@@ -640,6 +640,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
+
           </div>
         </div>
       </div>

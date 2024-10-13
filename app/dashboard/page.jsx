@@ -26,9 +26,9 @@ export default function Dashboard() {
   return (
     <>
       <main>
-        <div className="container-fluid py-4">
+        <div className="container-fluid py-4 mb-5">
           <div className="row">
-            <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div className="col-xl-4 col-sm-6 mb-xl-0 mb-4">
               <div className="card">
                 <div className="card-header p-3 pt-2">
                   <div className="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
@@ -41,16 +41,16 @@ export default function Dashboard() {
                 </div>
                 <hr className="dark horizontal my-0" />
                 <div className="card-footer p-3">
-                  <p className="mb-0">
+                  {/* <p className="mb-0">
                     <span className="text-success text-sm font-weight-bolder">
                       +55%{" "}
                     </span>
                     than last week
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            {/* <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
               <div className="card">
                 <div className="card-header p-3 pt-2">
                   <div className="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
@@ -73,8 +73,8 @@ export default function Dashboard() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            </div> */}
+            <div className="col-xl-4 col-sm-6 mb-xl-0 mb-4">
               <div className="card">
                 <div className="card-header p-3 pt-2">
                   <div className="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
@@ -87,16 +87,16 @@ export default function Dashboard() {
                 </div>
                 <hr className="dark horizontal my-0" />
                 <div className="card-footer p-3">
-                  <p className="mb-0">
+                  {/* <p className="mb-0">
                     <span className="text-danger text-sm font-weight-bolder">
                       -2%
                     </span>{" "}
                     than yesterday
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-sm-6">
+            <div className="col-xl-4 col-sm-6">
               <div className="card">
                 <div className="card-header p-3 pt-2">
                   <div className="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
@@ -109,17 +109,21 @@ export default function Dashboard() {
                 </div>
                 <hr className="dark horizontal my-0" />
                 <div className="card-footer p-3">
-                  <p className="mb-0">
+                  {/* <p className="mb-0">
                     <span className="text-success text-sm font-weight-bolder">
                       +5%{" "}
                     </span>
                     than yesterday
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="row mt-4">
+
+
+          {/* graphs and charts */}
+
+          {/* <div className="row mt-4">
             <div className="col-lg-4 col-md-6 mt-4 mb-4">
               <div className="card z-index-2 ">
                 <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
@@ -202,21 +206,21 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="row mb-4">
+          </div> */}
+          <div className="row mb-4 mt-5">
             <div className="col-lg-8 col-md-6 mb-md-0 mb-4">
               <div className="card">
                 <div className="card-header pb-0">
                   <div className="row">
                     <div className="col-lg-6 col-7">
-                      <h6>Projects</h6>
+                      <h6>Courses</h6>
                       <p className="text-sm mb-0">
                         <i
                           className="fa fa-check text-info"
                           aria-hidden="true"
                         ></i>
-                        <span className="font-weight-bold ms-1">30 done</span>{" "}
-                        this month
+                        <span className="font-weight-bold ms-1"></span>{" "}
+
                       </p>
                     </div>
                     <div className="col-lg-6 col-5 my-auto text-end">
@@ -268,16 +272,16 @@ export default function Dashboard() {
                       <thead>
                         <tr>
                           <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            username
+                            Course
                           </th>
                           <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                            role
+                            Instructor
                           </th>
                           <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            officialmail
+                            Price
                           </th>
                           <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            phone
+                            Average Rating
                           </th>
                         </tr>
                       </thead>
@@ -355,7 +359,7 @@ export default function Dashboard() {
                               <td className="align-middle text-center text-sm">
                                 <span className="text-xs font-weight-bold">
                                   {" "}
-                                  {"BDT " + course.price}{" "}
+                                  {"$ " + course.price}{" "}
                                 </span>
                               </td>
                               <td className="align-middle">
@@ -396,13 +400,13 @@ export default function Dashboard() {
             <div className="col-lg-4 col-md-6">
               <div className="card h-100">
                 <div className="card-header pb-0">
-                  <h6>Orders overview</h6>
+                  <h6>Students increase</h6>
                   <p className="text-sm">
                     <i
                       className="fa fa-arrow-up text-success"
                       aria-hidden="true"
                     ></i>
-                    <span className="font-weight-bold">24%</span> this month
+                    {/* <span className="font-weight-bold">2%</span> this month */}
                   </p>
                 </div>
                 <div className="card-body p-3">
@@ -413,10 +417,10 @@ export default function Dashboard() {
                       </span>
                       <div className="timeline-content">
                         <h6 className="text-dark text-sm font-weight-bold mb-0">
-                          $2400, Design changes
+                          Enroll Now for discount
                         </h6>
                         <p className="text-secondary font-weight-bold text-xs mt-1 mb-0">
-                          22 DEC 7:20 PM
+                          offer till 22 August 2024
                         </p>
                       </div>
                     </div>
@@ -424,14 +428,14 @@ export default function Dashboard() {
                       <span className="timeline-step">
                         <i className="fa fa-code text-danger text-gradient"></i>
                       </span>
-                      <div className="timeline-content">
+                      {/* <div className="timeline-content">
                         <h6 className="text-dark text-sm font-weight-bold mb-0">
                           New order #1832412
                         </h6>
                         <p className="text-secondary font-weight-bold text-xs mt-1 mb-0">
                           21 DEC 11 PM
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                     {/* <div className="timeline-block mb-3">
                   <span className="timeline-step">

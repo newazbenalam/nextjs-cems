@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { GetUsers, deleteUser } from '@/app/_lib/actions/UserUsecase';
-import { Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap';
 import Link from 'next/link';
 
 export default function Users() {
@@ -13,7 +13,7 @@ export default function Users() {
     const getUsers = async () => {
       const res = await GetUsers();
       setUsers(res);
-    }
+    };
 
     getUsers();
   }, []);
@@ -102,7 +102,7 @@ export default function Users() {
                         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
                         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
                         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">official mail</th>
-                        <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">phone</th>
+                        {/* <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">phone</th> */}
                         <th className="text-secondary opacity-7"></th>
                       </tr>
                     </thead>
@@ -126,11 +126,11 @@ export default function Users() {
                               <p className="text-secondary text-xs">{user.department}</p>
                             </td>
                             <td className="align-middle text-center text-sm">
-                              <span className="badge badge-sm bg-gradient-success">completed</span>
+                              <span className="badge badge-sm bg-gradient-success">{user.email}</span>
                             </td>
-                            <td className="align-middle text-center">
-                              <span className="text-secondary text-xs font-weight-bold">100%</span>
-                            </td>
+                            {/* <td className="align-middle text-center">
+                              <span className="text-secondary text-xs font-weight-bold">{user.courses}</span>
+                            </td> */}
                             <td className="align-middle">
                               <Link href={'/dashboard/users/' + user.id} className="text-secondary font-weight-bold text-xs">details</Link>
                             </td>
@@ -157,5 +157,5 @@ export default function Users() {
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from 'react'
-import '@/app/globals.css'
-import { logOut } from '../_lib/auth/useAuthentication'
+import { useEffect, useState } from 'react';
+import '@/app/globals.css';
+import { logOut } from '../_lib/auth/useAuthentication';
 import { useRouter, usePathname } from 'next/navigation';
 import './style.css';
 import { Image } from 'react-bootstrap';
@@ -13,26 +13,26 @@ import Link from 'next/link';
 export function PreloadResources() {
   // ReactDOM.preload('assets/css/nucleo-svg.css', { as: 'stylesheet' })
   // ReactDOM.preload('assets/css/nucleo-icons.css', { as: 'stylesheet' })
-  ReactDOM.preload('assets/css/material-dashboard.css', { as: 'stylesheet' })
-  ReactDOM.preload('assets/css/material-dashboard.css.map', { as: 'stylesheet' })
+  ReactDOM.preload('assets/css/material-dashboard.css', { as: 'stylesheet' });
+  ReactDOM.preload('assets/css/material-dashboard.css.map', { as: 'stylesheet' });
   // ReactDOM.preload('@/../public/assets/js/material-dashboard.js', { as: 'script/javascript' })
 
-  return null
+  return null;
 }
 
 export default function DashboardLayout({ children }) {
   const router = useRouter();
-  const [route, setRoute] = useState('')
-  const pathname = usePathname()
+  const [route, setRoute] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     setRoute(pathname);
-  }, [pathname])
+  }, [pathname]);
 
   const handleLogOut = async () => {
     await logOut();
     router.push('/login');
-  }
+  };
 
   return (
     <html lang="en">
@@ -90,6 +90,15 @@ export default function DashboardLayout({ children }) {
                     <i className="fa fa-servicestack opacity-10" />
                   </div>
                   <span className="nav-link-text ms-1">Services</span>
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className={route === '/dashboard/events' ? 'bg-purple active nav-link text-white' : 'nav-link text-white'} href={'/dashboard/events'}>
+                  <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i className="fa fa-calendar opacity-10" />
+                  </div>
+                  <span className="nav-link-text ms-1">Events</span>
                 </Link>
               </li>
               {/* <li className="nav-item">
@@ -240,5 +249,5 @@ export default function DashboardLayout({ children }) {
         </main>
       </body>
     </html>
-  )
+  );
 }

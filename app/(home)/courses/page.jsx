@@ -1,6 +1,6 @@
 
 "use client";
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 import { GetCourses } from "@/app/_lib/actions/CoursesUsecase";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -31,7 +31,7 @@ export default function CoursesList() {
       const res = await GetCourses();
       setCourses(res);
       console.log(res);
-    }
+    };
 
     getData();
 
@@ -99,7 +99,7 @@ export default function CoursesList() {
                       </span>
                     </div>
                     <div className="down-content">
-                      <span className="author">{course.instructor.name}</span>
+                      <span className="author">{course.instructor?.name}</span>
                       <h4>{course.title}</h4>
                     </div>
                   </div>

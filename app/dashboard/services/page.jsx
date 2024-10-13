@@ -110,13 +110,13 @@ export default function Services() {
                           Service
                         </th>
                         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                          Deadline
+                          contact
                         </th>
                         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                          Price
+                          created At
                         </th>
                         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                          Average Rating
+                          Updated At
                         </th>
                         <th className="text-secondary opacity-7"></th>
                       </tr>
@@ -154,24 +154,23 @@ export default function Services() {
                                 {service.status}
                               </p>
                               <p className="text-secondary text-xs">
-                                {services.createdAt
-                                  ? // format datetime to date only
-                                  Date(services.createdAt)
-                                    .split(":")[0]
-                                    .split(" ")
-                                    .slice(0, 4)
-                                    .join(" ")
-                                  : "16 Feb 2023"}
+                                {service.contact}
                               </p>
                             </td>
                             <td className="align-middle text-center text-sm">
                               <span className="badge badge-sm bg-gradient-success">
-                                completed
+                                {service.createdAt ?
+                                  // format datetime to date only
+                                  Date(service.createdAt).split(':')[0].split(' ').slice(0, 4).join(' ')
+                                  : '16 July 2024'}
                               </span>
                             </td>
                             <td className="align-middle text-center">
-                              <span className="text-secondary text-xs font-weight-bold">
-                                100%
+                              <span className="badge badge-sm bg-gradient-success">
+                                {service.updatedAt ?
+                                  // format datetime to date only
+                                  Date(service.updatedAt).split(':')[0].split(' ').slice(0, 4).join(' ')
+                                  : '16 July 2024'}
                               </span>
                             </td>
                             <td className="align-middle">
